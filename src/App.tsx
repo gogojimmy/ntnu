@@ -7,6 +7,7 @@ import Slide5 from "./slides/lesson1/Slide5";
 import Slide6 from "./slides/lesson1/Slide6";
 import Slide7 from "./slides/lesson1/Slide7";
 import Slide8 from "./slides/lesson1/Slide8";
+import Slide9 from "./slides/lesson1/Slide9";
 import { motion } from "motion/react";
 
 const courses = [
@@ -160,6 +161,7 @@ function App() {
 				<Route path="/lesson1/slide6" element={<Slide6 />} />
 				<Route path="/lesson1/slide7" element={<Slide7 />} />
 				<Route path="/lesson1/slide8" element={<Slide8 />} />
+				<Route path="/lesson1/slide9" element={<Slide9 />} />
 			</Routes>
 		</Router>
 	);

@@ -95,11 +95,11 @@ export default function Slide5() {
 							</h1>
 						</motion.div>
 
-						<div className="grid grid-cols-2 gap-8">
+						<div className="space-y-8">
 							{/* Lists Section */}
 							<motion.div
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
+								initial={{ opacity: 0, y: -20 }}
+								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
 								className="space-y-4"
 							>
@@ -127,8 +127,8 @@ export default function Slide5() {
 
 							{/* Links and Images Section */}
 							<motion.div
-								initial={{ opacity: 0, x: 20 }}
-								animate={{ opacity: 1, x: 0 }}
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
 								className="space-y-4"
 							>
