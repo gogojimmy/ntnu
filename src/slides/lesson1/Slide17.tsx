@@ -24,15 +24,15 @@ export default function Slide17() {
 							transition={{ duration: 0.6 }}
 						>
 							<h1 className="text-4xl font-bold text-white mb-2">
-								Design System 包含哪些內容？
+								我們為什麼需要 Design System？
 							</h1>
 							<h2 className="text-2xl text-tech-highlight/80">
-								設計系統的四大核心組成
+								設計系統帶來的好處
 							</h2>
 						</motion.div>
 
 						<div className="grid grid-cols-2 gap-8">
-							{/* Left Column */}
+							{/* Left Column - Benefits */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -42,30 +42,24 @@ export default function Slide17() {
 								<div className="space-y-6">
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>🎨</span> 設計層面（Design Tokens）
+											<span>✅</span> 提升一致性
 										</h4>
-										<ul className="list-disc list-inside space-y-2 text-gray-300">
-											<li>顏色（Color Palette）</li>
-											<li>字體（Typography）</li>
-											<li>間距（Spacing, Margin, Padding）</li>
-											<li>圓角、陰影（Border Radius, Shadow）</li>
-										</ul>
+										<p className="text-gray-300 leading-relaxed">
+											不同設計師／工程師開發的畫面看起來風格統一。
+										</p>
 									</div>
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>🧩</span> 元件庫（Component Library）
+											<span>✅</span> 加快開發速度
 										</h4>
-										<ul className="list-disc list-inside space-y-2 text-gray-300">
-											<li>Button、Input、Modal</li>
-											<li>Card、Navbar</li>
-											<li>Form、Table</li>
-											<li>Layout Components</li>
-										</ul>
+										<p className="text-gray-300 leading-relaxed">
+											使用現有元件，重複利用，不需要每次都重做。
+										</p>
 									</div>
 								</div>
 							</motion.div>
 
-							{/* Right Column */}
+							{/* Right Column - More Benefits */}
 							<motion.div
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -75,25 +69,19 @@ export default function Slide17() {
 								<div className="space-y-6">
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>📘</span> 文件與規範（Documentation）
+											<span>✅</span> 提升協作效率
 										</h4>
-										<ul className="list-disc list-inside space-y-2 text-gray-300">
-											<li>使用規則</li>
-											<li>命名規則</li>
-											<li>行為指南（如互動狀態）</li>
-											<li>最佳實踐範例</li>
-										</ul>
+										<p className="text-gray-300 leading-relaxed">
+											設計師與工程師有共同語言（按鈕的狀態、尺寸有標準）。
+										</p>
 									</div>
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>⚙️</span> 程式碼實作（Code Implementation）
+											<span>✅</span> 易於維護與擴展
 										</h4>
-										<ul className="list-disc list-inside space-y-2 text-gray-300">
-											<li>React/Vue/HTML + CSS 元件</li>
-											<li>整合 Tailwind / Styled Components</li>
-											<li>Storybook 整合</li>
-											<li>版本控制與發布流程</li>
-										</ul>
+										<p className="text-gray-300 leading-relaxed">
+											想要全站換色、改字體，只需改一處。
+										</p>
 									</div>
 								</div>
 							</motion.div>
@@ -107,35 +95,39 @@ export default function Slide17() {
 							className="bg-[#1a1a1a] rounded-lg p-8"
 						>
 							<div className="grid grid-cols-4 gap-4">
-								{/* Design Tokens */}
-								<div className="bg-black/30 rounded-lg p-4">
-									<div className="flex gap-2 mb-2">
-										<div className="w-8 h-8 rounded bg-blue-500" />
-										<div className="w-8 h-8 rounded bg-blue-400" />
-										<div className="w-8 h-8 rounded bg-blue-300" />
+								{/* Before Design System */}
+								<div className="col-span-2 bg-black/30 rounded-lg p-6">
+									<h4 className="text-xl font-bold text-red-400 mb-4">
+										沒有 Design System
+									</h4>
+									<div className="space-y-4">
+										<button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+											按鈕 A
+										</button>
+										<button className="bg-indigo-500 text-white px-6 py-3 rounded">
+											按鈕 B
+										</button>
+										<button className="bg-purple-500 text-white px-5 py-2 rounded-xl">
+											按鈕 C
+										</button>
 									</div>
-									<div className="text-sm text-gray-400">Design Tokens</div>
 								</div>
-								{/* Components */}
-								<div className="bg-black/30 rounded-lg p-4">
-									<button className="bg-blue-500 text-white px-4 py-2 rounded mb-2 w-full">
-										Button
-									</button>
-									<div className="text-sm text-gray-400">Components</div>
-								</div>
-								{/* Documentation */}
-								<div className="bg-black/30 rounded-lg p-4">
-									<div className="border border-gray-600 rounded p-2 mb-2 text-xs text-gray-400">
-										📝 Usage Guidelines
+								{/* After Design System */}
+								<div className="col-span-2 bg-black/30 rounded-lg p-6">
+									<h4 className="text-xl font-bold text-green-400 mb-4">
+										使用 Design System
+									</h4>
+									<div className="space-y-4 space-x-4">
+										<button className="bg-blue-500 text-white px-4 py-2 rounded">
+											按鈕 A
+										</button>
+										<button className="bg-blue-500 text-white px-4 py-2 rounded">
+											按鈕 B
+										</button>
+										<button className="bg-blue-500 text-white px-4 py-2 rounded">
+											按鈕 C
+										</button>
 									</div>
-									<div className="text-sm text-gray-400">Documentation</div>
-								</div>
-								{/* Code */}
-								<div className="bg-black/30 rounded-lg p-4">
-									<div className="font-mono text-xs text-gray-400 bg-black/50 p-2 rounded mb-2">
-										{"<Button variant='primary'>"}
-									</div>
-									<div className="text-sm text-gray-400">Implementation</div>
 								</div>
 							</div>
 						</motion.div>

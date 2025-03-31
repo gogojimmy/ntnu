@@ -37,48 +37,6 @@ export default function SlideLayout({
 	return (
 		<div className="min-h-screen w-full bg-tech-darker text-white grid-bg overflow-hidden">
 			{/* Global Font Size Styles */}
-			<style>{`
-				.slide-content {
-					font-size: 1.1rem;
-				}
-				.slide-content h1 {
-					font-size: 3rem !important;
-				}
-				.slide-content h2 {
-					font-size: 2rem !important;
-				}
-				.slide-content h3 {
-					font-size: 1.75rem !important;
-				}
-				.slide-content h4 {
-					font-size: 1.5rem !important;
-				}
-				.slide-content p, 
-				.slide-content li {
-					font-size: 1.5rem !important;
-					line-height: 1.3;
-				}
-				.slide-content .text-sm {
-					font-size: 1.1rem !important;
-				}
-				.slide-content pre,
-				.slide-content code {
-					font-size: 1rem !important;
-				}
-				.slide-content button {
-					font-size: 1.1rem !important;
-				}
-				.slide-content input,
-				.slide-content textarea {
-					font-size: 1.1rem !important;
-				}
-				.preview-content h3 {
-					font-size: 1.75rem !important;
-				}
-				.preview-content p {
-					font-size: 1.1rem !important;
-				}
-			`}</style>
 
 			{/* Background Layers */}
 			<div className="fixed inset-0 bg-tech-glow" />

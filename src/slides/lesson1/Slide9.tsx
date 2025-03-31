@@ -6,7 +6,7 @@ const CodeBlock = ({ code, language }: { code: string; language: string }) => (
 	<Highlight theme={themes.nightOwl} code={code.trim()} language={language}>
 		{({ style, tokens, getLineProps, getTokenProps }) => (
 			<pre
-				className="bg-black/30 p-3 rounded-md overflow-x-auto text-sm"
+				className="bg-black/30 p-3 rounded-md overflow-x-auto text-sm h-full"
 				style={{ ...style }}
 			>
 				{tokens.map((line, i) => (
@@ -131,88 +131,92 @@ export default function Slide9() {
 							</h2>
 						</motion.div>
 
-						<div className="space-y-8">
-							{/* CSS Value Section */}
+						<div className="grid grid-cols-2 gap-8">
+							{/* Left Column - CSS Value & Demo */}
 							<motion.div
-								initial={{ opacity: 0, y: -20 }}
-								animate={{ opacity: 1, y: 0 }}
+								initial={{ opacity: 0, x: -20 }}
+								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
-								className="space-y-4"
+								className="space-y-6"
 							>
-								<h2 className="text-2xl font-bold text-tech-highlight">
-									CSS 的價值
-								</h2>
-								<div className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-6">
-									<ul className="space-y-4 text-white/90">
-										<li className="flex items-start gap-3">
-											<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
-												1
-											</div>
-											<div>
-												<h4 className="font-bold text-tech-highlight mb-1">
-													分離內容與表現
-												</h4>
-												<p className="text-sm text-white/70">
-													HTML 專注於結構，CSS 負責外觀，使代碼更容易維護和更新
-												</p>
-											</div>
-										</li>
-										<li className="flex items-start gap-3">
-											<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
-												2
-											</div>
-											<div>
-												<h4 className="font-bold text-tech-highlight mb-1">
-													統一管理樣式
-												</h4>
-												<p className="text-sm text-white/70">
-													一次定義，多處使用，確保網站風格的一致性
-												</p>
-											</div>
-										</li>
-										<li className="flex items-start gap-3">
-											<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
-												3
-											</div>
-											<div>
-												<h4 className="font-bold text-tech-highlight mb-1">
-													響應式設計
-												</h4>
-												<p className="text-sm text-white/70">
-													根據不同設備尺寸調整版面，提供最佳使用體驗
-												</p>
-											</div>
-										</li>
-									</ul>
+								{/* CSS Value Section */}
+								<div className="space-y-4">
+									<h2 className="text-2xl font-bold text-tech-highlight">
+										CSS 的價值
+									</h2>
+									<div className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-6">
+										<ul className="space-y-4 text-white/90">
+											<li className="flex items-start gap-3">
+												<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
+													1
+												</div>
+												<div>
+													<h4 className="font-bold text-tech-highlight mb-1">
+														分離內容與表現
+													</h4>
+													<p className="text-sm text-white/70">
+														HTML 專注於結構，CSS
+														負責外觀，使代碼更容易維護和更新
+													</p>
+												</div>
+											</li>
+											<li className="flex items-start gap-3">
+												<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
+													2
+												</div>
+												<div>
+													<h4 className="font-bold text-tech-highlight mb-1">
+														統一管理樣式
+													</h4>
+													<p className="text-sm text-white/70">
+														一次定義，多處使用，確保網站風格的一致性
+													</p>
+												</div>
+											</li>
+											<li className="flex items-start gap-3">
+												<div className="mt-1 w-6 h-6 rounded bg-tech-highlight/20 border border-tech-highlight/30 flex items-center justify-center text-tech-highlight">
+													3
+												</div>
+												<div>
+													<h4 className="font-bold text-tech-highlight mb-1">
+														響應式設計
+													</h4>
+													<p className="text-sm text-white/70">
+														根據不同設備尺寸調整版面，提供最佳使用體驗
+													</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								{/* CSS Demo Section */}
+								<div className="space-y-4">
+									<h2 className="text-2xl font-bold text-tech-highlight">
+										CSS 效果展示
+									</h2>
+									<div className="preview-content space-y-6">
+										<div
+											dangerouslySetInnerHTML={{
+												__html: htmlCode,
+											}}
+										/>
+									</div>
 								</div>
 							</motion.div>
 
-							{/* CSS Demo Section */}
+							{/* Right Column - Code */}
 							<motion.div
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
+								initial={{ opacity: 0, x: 20 }}
+								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
-								className="space-y-4"
+								className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-6 flex flex-col h-full"
 							>
-								<h2 className="text-2xl font-bold text-tech-highlight">
-									CSS 效果展示
-								</h2>
-								<div className="grid grid-cols-2 gap-8">
-									<div className="space-y-4">
-										<div className="preview-content space-y-6">
-											<div
-												dangerouslySetInnerHTML={{
-													__html: htmlCode,
-												}}
-											/>
-										</div>
-									</div>
-									<div className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-4">
-										<h3 className="text-lg font-bold text-tech-purple mb-4">
-											CSS 程式碼
-										</h3>
-										<CodeBlock code={cssCode} language="css" />
-									</div>
+								<h3 className="text-lg font-bold text-tech-purple mb-4">
+									CSS 程式碼
+								</h3>
+								<div className="flex-1">
+									<CodeBlock code={cssCode} language="css" />
 								</div>
 							</motion.div>
 						</div>
