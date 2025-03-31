@@ -15,6 +15,14 @@ import Slide13 from "./slides/lesson1/Slide13";
 import Slide14 from "./slides/lesson1/Slide14";
 import Slide15 from "./slides/lesson1/Slide15";
 import Slide16 from "./slides/lesson1/Slide16";
+import Slide17 from "./slides/lesson1/Slide17";
+import Slide18 from "./slides/lesson1/Slide18";
+import Slide19 from "./slides/lesson1/Slide19";
+import Slide20 from "./slides/lesson1/Slide20";
+import Slide21 from "./slides/lesson1/Slide21";
+import Slide22 from "./slides/lesson1/Slide22";
+import Slide23 from "./slides/lesson1/Slide23";
+import Slide24 from "./slides/lesson1/Slide24";
 import Lesson2Slide1 from "./slides/lesson2/Slide1";
 import Lesson2Slide2 from "./slides/lesson2/Slide2";
 import Lesson2Slide3 from "./slides/lesson2/Slide3";
@@ -179,6 +187,14 @@ export default function App() {
 				<Route path="/lesson1/slide14" element={<Slide14 />} />
 				<Route path="/lesson1/slide15" element={<Slide15 />} />
 				<Route path="/lesson1/slide16" element={<Slide16 />} />
+				<Route path="/lesson1/slide17" element={<Slide17 />} />
+				<Route path="/lesson1/slide18" element={<Slide18 />} />
+				<Route path="/lesson1/slide19" element={<Slide19 />} />
+				<Route path="/lesson1/slide20" element={<Slide20 />} />
+				<Route path="/lesson1/slide21" element={<Slide21 />} />
+				<Route path="/lesson1/slide22" element={<Slide22 />} />
+				<Route path="/lesson1/slide23" element={<Slide23 />} />
+				<Route path="/lesson1/slide24" element={<Slide24 />} />
 				<Route path="/lesson2/slide1" element={<Lesson2Slide1 />} />
 				<Route path="/lesson2/slide2" element={<Lesson2Slide2 />} />
 				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
