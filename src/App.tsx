@@ -12,6 +12,9 @@ import Slide10 from "./slides/lesson1/Slide10";
 import Slide11 from "./slides/lesson1/Slide11";
 import Slide12 from "./slides/lesson1/Slide12";
 import Slide13 from "./slides/lesson1/Slide13";
+import Slide14 from "./slides/lesson1/Slide14";
+import Slide15 from "./slides/lesson1/Slide15";
+import Slide16 from "./slides/lesson1/Slide16";
 import { motion } from "motion/react";
 
 const courses = [
@@ -170,6 +173,9 @@ function App() {
 				<Route path="/lesson1/slide11" element={<Slide11 />} />
 				<Route path="/lesson1/slide12" element={<Slide12 />} />
 				<Route path="/lesson1/slide13" element={<Slide13 />} />
+				<Route path="/lesson1/slide14" element={<Slide14 />} />
+				<Route path="/lesson1/slide15" element={<Slide15 />} />
+				<Route path="/lesson1/slide16" element={<Slide16 />} />
 			</Routes>
 		</Router>
 	);

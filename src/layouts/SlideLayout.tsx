@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState, useRef } from "react";
+import { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 
@@ -20,27 +20,6 @@ export default function SlideLayout({
 	courseName = "NTNU Web Development Course",
 }: SlideLayoutProps) {
 	const navigate = useNavigate();
-	const [scale, setScale] = useState(1);
-	const contentRef = useRef<HTMLDivElement>(null);
-
-	const updateScale = () => {
-		if (!contentRef.current) return;
-
-		const contentHeight = contentRef.current.scrollHeight;
-		const contentWidth = contentRef.current.scrollWidth;
-		const targetWidth = window.innerWidth * 0.85;
-		const targetHeight = window.innerHeight * 0.8;
-
-		setScale(
-			Math.min(targetWidth / contentWidth, targetHeight / contentHeight)
-		);
-	};
-
-	useEffect(() => {
-		updateScale();
-		window.addEventListener("resize", updateScale);
-		return () => window.removeEventListener("resize", updateScale);
-	}, []);
 
 	const handleKeyDown = (e: KeyboardEvent) => {
 		if (e.key === "ArrowRight" && nextSlide) {
@@ -60,19 +39,19 @@ export default function SlideLayout({
 			{/* Global Font Size Styles */}
 			<style>{`
 				.slide-content {
-					font-size: 1.25rem;
+					font-size: 1.1rem;
 				}
 				.slide-content h1 {
-					font-size: 3.5rem !important;
+					font-size: 3rem !important;
 				}
 				.slide-content h2 {
-					font-size: 2.5rem !important;
-				}
-				.slide-content h3 {
 					font-size: 2rem !important;
 				}
-				.slide-content h4 {
+				.slide-content h3 {
 					font-size: 1.75rem !important;
+				}
+				.slide-content h4 {
+					font-size: 1.5rem !important;
 				}
 				.slide-content p, 
 				.slide-content li {
@@ -80,24 +59,24 @@ export default function SlideLayout({
 					line-height: 1.75;
 				}
 				.slide-content .text-sm {
-					font-size: 1.25rem !important;
+					font-size: 1.1rem !important;
 				}
 				.slide-content pre,
 				.slide-content code {
-					font-size: 1.25rem !important;
+					font-size: 1rem !important;
 				}
 				.slide-content button {
-					font-size: 1.25rem !important;
+					font-size: 1.1rem !important;
 				}
 				.slide-content input,
 				.slide-content textarea {
-					font-size: 1.25rem !important;
+					font-size: 1.1rem !important;
 				}
 				.preview-content h3 {
 					font-size: 1.75rem !important;
 				}
 				.preview-content p {
-					font-size: 1.25rem !important;
+					font-size: 1.1rem !important;
 				}
 			`}</style>
 
@@ -129,14 +108,8 @@ export default function SlideLayout({
 				</header>
 
 				{/* Main Content */}
-				<main className="flex-1 flex items-center justify-center">
-					<div
-						ref={contentRef}
-						className="w-[85%] max-w-[90vw] origin-center p-12 slide-content"
-						style={{ transform: `scale(${scale})` }}
-					>
-						{children}
-					</div>
+				<main className="flex-1 flex items-center justify-center p-8">
+					<div className="w-[80%] h-[90vh] slide-content">{children}</div>
 				</main>
 
 				{/* Navigation */}
