@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Slide1 from "./slides/lesson1/Slide1";
 import Slide2 from "./slides/lesson1/Slide2";
 import Slide3 from "./slides/lesson1/Slide3";
+import Slide4 from "./slides/lesson1/Slide4";
 import { motion } from "motion/react";
 
 const courses = [
@@ -150,6 +151,7 @@ function App() {
 				<Route path="/lesson1/slide1" element={<Slide1 />} />
 				<Route path="/lesson1/slide2" element={<Slide2 />} />
 				<Route path="/lesson1/slide3" element={<Slide3 />} />
+				<Route path="/lesson1/slide4" element={<Slide4 />} />
 			</Routes>
 		</Router>
 	);
