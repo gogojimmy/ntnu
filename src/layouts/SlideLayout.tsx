@@ -56,7 +56,7 @@ export default function SlideLayout({
 				.slide-content p, 
 				.slide-content li {
 					font-size: 1.5rem !important;
-					line-height: 1.75;
+					line-height: 1.3;
 				}
 				.slide-content .text-sm {
 					font-size: 1.1rem !important;

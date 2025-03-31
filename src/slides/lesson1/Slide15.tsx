@@ -1,164 +1,15 @@
 import SlideLayout from "../../layouts/SlideLayout";
 import { motion } from "motion/react";
-import { Highlight, themes } from "prism-react-renderer";
-
-const CodeBlock = ({ code, language }: { code: string; language: string }) => (
-	<Highlight theme={themes.nightOwl} code={code.trim()} language={language}>
-		{({ style, tokens, getLineProps, getTokenProps }) => (
-			<pre
-				className="bg-black/30 p-3 rounded-md overflow-x-auto text-sm"
-				style={{ ...style }}
-			>
-				{tokens.map((line, i) => (
-					<div key={i} {...getLineProps({ line })}>
-						{line.map((token, key) => (
-							<span key={key} {...getTokenProps({ token })} />
-						))}
-					</div>
-				))}
-			</pre>
-		)}
-	</Highlight>
-);
-
-const PreviewStyles = () => (
-	<style>{`
-		.preview-section {
-			background: rgba(0, 0, 0, 0.3);
-			border-radius: 0.5rem;
-			padding: 1.5rem;
-			margin-bottom: 1rem;
-		}
-
-		.css-method {
-			background: #1a1a1a;
-			border-radius: 0.5rem;
-			padding: 2rem;
-			margin-bottom: 1rem;
-		}
-
-		.method-title {
-			color: #22d3ee;
-			font-size: 2rem;
-			font-weight: bold;
-			margin-bottom: 1.5rem;
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-		}
-
-		.method-title .icon {
-			color: #f5f524;
-			font-size: 2.5rem;
-		}
-
-		.method-description {
-			color: #a3a3a3;
-			margin-bottom: 2rem;
-			font-size: 1.1rem;
-			line-height: 1.6;
-		}
-
-		.usage-tag {
-			display: inline-block;
-			padding: 0.5rem 1rem;
-			border-radius: 9999px;
-			font-size: 1rem;
-			font-weight: 500;
-			margin-top: 1rem;
-		}
-
-		.specific {
-			background: rgba(149, 76, 233, 0.2);
-			color: #954ce9;
-			border: 1px solid #954ce9;
-		}
-
-		.example {
-			margin-top: 2rem;
-			padding: 1.5rem;
-			border-radius: 0.5rem;
-			background: rgba(0, 0, 0, 0.2);
-		}
-
-		.live-preview {
-			margin-top: 1rem;
-			padding: 1rem;
-			border-radius: 0.5rem;
-			background: #1a1a1a;
-		}
-
-		/* 內部樣式示例 */
-		.special-heading {
-			color: #954ce9;
-			font-size: 1.5rem;
-			text-align: center;
-			margin-bottom: 1rem;
-		}
-
-		.special-button {
-			background: #954ce9;
-			color: white;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			display: block;
-			margin: 0 auto;
-		}
-
-		.special-text {
-			text-align: center;
-			color: #a3a3a3;
-			margin-top: 1rem;
-		}
-	`}</style>
-);
 
 export default function Slide15() {
-	const internalStyleCode = `<!-- 內部樣式表範例 -->
-<head>
-  <style>
-    .special-heading {
-      color: #954ce9;
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .special-button {
-      background: #954ce9;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .special-text {
-      text-align: center;
-      color: #a3a3a3;
-      margin-top: 1rem;
-    }
-  </style>
-</head>
-<body>
-  <h2 class="special-heading">特殊標題樣式</h2>
-  <button class="special-button">特殊按鈕</button>
-  <p class="special-text">特殊文字樣式</p>
-</body>`;
-
 	return (
 		<SlideLayout
 			prevSlide="/lesson1/slide14"
 			nextSlide="/lesson1/slide16"
 			currentSlide="15"
-			totalSlides="25"
+			totalSlides="29"
 			courseName="NTNU Web Development Course"
 		>
-			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
@@ -173,53 +24,102 @@ export default function Slide15() {
 							transition={{ duration: 0.6 }}
 						>
 							<h1 className="text-4xl font-bold text-white mb-2">
-								CSS 引入方式 (2/3)
+								Design System 是什麼？
 							</h1>
 							<h2 className="text-2xl text-tech-highlight/80">
-								內部樣式表 Internal Styles
+								設計系統的基本概念
 							</h2>
 						</motion.div>
 
 						<div className="grid grid-cols-2 gap-8">
-							{/* Left Column - Description */}
+							{/* Left Column - Definition */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
-								className="css-method"
+								className="bg-[#1a1a1a] rounded-lg p-8 flex flex-col"
 							>
-								<div className="method-title">
-									<span className="icon">{"<style>"}</span>
-									內部樣式表
+								<div className="space-y-6">
+									<div className="bg-black/30 rounded-lg p-6">
+										<h4 className="text-xl font-bold text-tech-purple mb-4">
+											核心定義
+										</h4>
+										<p className="text-gray-300 text-lg leading-relaxed mb-4">
+											Design System（設計系統）是一套
+											<span className="text-tech-highlight">
+												可重複使用的設計與程式規範
+											</span>
+											。
+										</p>
+										<p className="text-gray-300 text-lg leading-relaxed mb-4">
+											它結合了
+											<span className="text-tech-highlight">
+												設計規則、元件庫、開發標準
+											</span>
+											，確保產品在不同情境下都能保持一致性。
+										</p>
+									</div>
+									<div className="bg-black/30 rounded-lg p-6">
+										<h4 className="text-xl font-bold text-tech-purple mb-4">
+											一句話說明
+										</h4>
+										<p className="text-2xl font-bold text-tech-highlight text-center py-4">
+											Design System 是一個團隊在做 UI 時的共同語言。
+										</p>
+									</div>
 								</div>
-								<div className="method-description">
-									內部樣式表是在 HTML 文件的 head 區域中使用 style 標籤定義的
-									CSS 樣式。這種方式的特點是：
-									<ul className="list-disc list-inside mt-4 space-y-2">
-										<li>樣式只在當前頁面生效</li>
-										<li>可以使用選擇器重複使用樣式</li>
-										<li>適合單頁面的特殊樣式需求</li>
-										<li>不需要額外的文件請求</li>
-									</ul>
-								</div>
-								<div className="usage-tag specific">單頁特殊樣式</div>
 							</motion.div>
 
-							{/* Right Column - Code Example and Preview */}
+							{/* Right Column - Visual Example */}
 							<motion.div
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
-								className="css-method h-[600px] flex flex-col"
+								className="bg-[#1a1a1a] rounded-lg p-8 flex flex-col"
 							>
-								<div className="example [&_pre]:!text-sm flex-1 flex flex-col overflow-hidden">
-									<div className="flex-1 overflow-auto">
-										<CodeBlock code={internalStyleCode} language="html" />
-									</div>
-									<div className="live-preview mt-4">
-										<h2 className="special-heading">特殊標題樣式</h2>
-										<button className="special-button">特殊按鈕</button>
-										<p className="special-text">特殊文字樣式</p>
+								<div className="bg-black/30 rounded-lg p-6 h-full">
+									<h4 className="text-xl font-bold text-tech-purple mb-4">
+										設計系統示例
+									</h4>
+									<div className="space-y-6">
+										{/* Colors */}
+										<div className="space-y-2">
+											<p className="text-gray-300 mb-2">🎨 色彩系統</p>
+											<div className="flex gap-2">
+												<div className="w-12 h-12 rounded bg-blue-500" />
+												<div className="w-12 h-12 rounded bg-blue-400" />
+												<div className="w-12 h-12 rounded bg-blue-300" />
+												<div className="w-12 h-12 rounded bg-gray-500" />
+												<div className="w-12 h-12 rounded bg-gray-400" />
+												<div className="w-12 h-12 rounded bg-gray-300" />
+											</div>
+										</div>
+										{/* Typography */}
+										<div className="space-y-2">
+											<p className="text-gray-300 mb-2">📝 字體規範</p>
+											<div className="space-y-2">
+												<div className="text-2xl font-bold text-white">
+													標題文字
+												</div>
+												<div className="text-lg text-gray-300">內文文字</div>
+												<div className="text-sm text-gray-400">輔助文字</div>
+											</div>
+										</div>
+										{/* Components */}
+										<div className="space-y-2">
+											<p className="text-gray-300 mb-2">🧩 基礎元件</p>
+											<div className="flex gap-2">
+												<button className="bg-blue-500 text-white px-4 py-2 rounded">
+													主要按鈕
+												</button>
+												<button className="bg-gray-600 text-white px-4 py-2 rounded">
+													次要按鈕
+												</button>
+												<button className="border border-blue-500 text-blue-500 px-4 py-2 rounded">
+													外框按鈕
+												</button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</motion.div>

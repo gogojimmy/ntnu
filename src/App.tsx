@@ -15,6 +15,9 @@ import Slide13 from "./slides/lesson1/Slide13";
 import Slide14 from "./slides/lesson1/Slide14";
 import Slide15 from "./slides/lesson1/Slide15";
 import Slide16 from "./slides/lesson1/Slide16";
+import Slide17 from "./slides/lesson1/Slide17";
+import Slide18 from "./slides/lesson1/Slide18";
+import Slide19 from "./slides/lesson1/Slide19";
 import { motion } from "motion/react";
 
 const courses = [
@@ -155,7 +158,7 @@ function HomePage() {
 	);
 }
 
-function App() {
+export default function App() {
 	return (
 		<Router>
 			<Routes>
@@ -176,9 +179,10 @@ function App() {
 				<Route path="/lesson1/slide14" element={<Slide14 />} />
 				<Route path="/lesson1/slide15" element={<Slide15 />} />
 				<Route path="/lesson1/slide16" element={<Slide16 />} />
+				<Route path="/lesson1/slide17" element={<Slide17 />} />
+				<Route path="/lesson1/slide18" element={<Slide18 />} />
+				<Route path="/lesson1/slide19" element={<Slide19 />} />
 			</Routes>
 		</Router>
 	);
 }
-
-export default App;
