@@ -23,6 +23,8 @@ import Slide21 from "./slides/lesson1/Slide21";
 import Slide22 from "./slides/lesson1/Slide22";
 import Slide23 from "./slides/lesson1/Slide23";
 import Slide24 from "./slides/lesson1/Slide24";
+import Slide25 from "./slides/lesson1/Slide25";
+import Slide26 from "./slides/lesson1/Slide26";
 import Lesson2Slide1 from "./slides/lesson2/Slide1";
 import Lesson2Slide2 from "./slides/lesson2/Slide2";
 import Lesson2Slide3 from "./slides/lesson2/Slide3";
@@ -33,7 +35,7 @@ const courses = [
 		id: 1,
 		title: "HTML/CSS 基礎與 AI 輔助開發入門",
 		description: "學習網頁開發基礎，並運用 AI 工具加速開發流程",
-		totalSlides: "25",
+		totalSlides: "26",
 		icon: (
 			<svg
 				className="w-6 h-6"
@@ -195,6 +197,8 @@ export default function App() {
 				<Route path="/lesson1/slide22" element={<Slide22 />} />
 				<Route path="/lesson1/slide23" element={<Slide23 />} />
 				<Route path="/lesson1/slide24" element={<Slide24 />} />
+				<Route path="/lesson1/slide25" element={<Slide25 />} />
+				<Route path="/lesson1/slide26" element={<Slide26 />} />
 				<Route path="/lesson2/slide1" element={<Lesson2Slide1 />} />
 				<Route path="/lesson2/slide2" element={<Lesson2Slide2 />} />
 				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
