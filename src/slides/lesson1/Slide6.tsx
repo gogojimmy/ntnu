@@ -23,56 +23,40 @@ const CodeBlock = ({ code, language }: { code: string; language: string }) => (
 
 const PreviewStyles = () => (
 	<style>{`
-		.preview-content ul {
-			list-style-type: disc;
-			padding-left: 1.5rem;
+		.preview-content .block-container {
+			border: 1px solid rgba(34, 211, 238, 0.3);
+			padding: 0.5rem;
+			margin-bottom: 0.5rem;
+			border-radius: 0.25rem;
 		}
-		.preview-content ol {
-			list-style-type: decimal;
-			padding-left: 1.5rem;
-		}
-		.preview-content ol li {
-			margin-left: 0.5rem;
-		}
-		.preview-content ol li::marker {
+		.preview-content .username {
 			color: #22d3ee;
 			font-weight: bold;
 		}
-		.preview-content ul li::marker {
+		.preview-content .highlight {
 			color: #22d3ee;
+			font-weight: bold;
 		}
 	`}</style>
 );
 
-export default function Slide5() {
-	const listsCode = `<ul>
-  <li>無序清單項目 1</li>
-  <li>無序清單項目 2</li>
-  <li>無序清單項目 3</li>
-</ul>
+export default function Slide6() {
+	const containersCode = `<!-- 區塊級容器 -->
+<div class="block-container">
+  這是一個區塊容器
+  <span class="username">這是行內容器</span>
+  區塊容器會換行
+</div>
 
-<ol>
-  <li>有序清單項目 1</li>
-  <li>有序清單項目 2</li>
-  <li>有序清單項目 3</li>
-</ol>`;
-
-	const linksAndImagesCode = `<p>
-  <a href="https://www.ntnu.edu.tw">
-    點擊訪問 NTNU 網站
-  </a>
-</p>
-
-<img 
-  src="https://picsum.photos/200/100" 
-  alt="示例圖片"
-/>`;
+<!-- 行內容器 -->
+這是一段文字，包含<span class="highlight">重點內容</span>，
+不會換行`;
 
 	return (
 		<SlideLayout
-			prevSlide="/lesson1/slide4"
-			nextSlide="/lesson1/slide6"
-			currentSlide="05"
+			prevSlide="/lesson1/slide5"
+			nextSlide="/lesson1/slide7"
+			currentSlide="06"
 			totalSlides="25"
 			courseName="NTNU Web Development Course"
 		>
@@ -91,67 +75,69 @@ export default function Slide5() {
 							transition={{ duration: 0.6 }}
 						>
 							<h1 className="text-4xl font-bold text-white mb-2">
-								常用 HTML 標籤 (2)
+								常用 HTML 標籤 (3)
 							</h1>
+							<h2 className="text-2xl text-tech-highlight/80">容器元素</h2>
 						</motion.div>
 
 						<div className="grid grid-cols-2 gap-8">
-							{/* Lists Section */}
+							{/* Code Section */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
 								className="space-y-4"
 							>
-								<h2 className="text-2xl font-bold text-tech-highlight">清單</h2>
-								<div className="grid grid-cols-2 gap-4 bg-black/20 rounded-lg border border-tech-grid-bright/30">
-									<div className="p-4">
-										<h3 className="text-lg font-bold text-tech-purple mb-2">
-											程式碼：
-										</h3>
-										<CodeBlock code={listsCode} language="html" />
-									</div>
-									<div className="p-4 border-l border-tech-grid-bright/30">
-										<h3 className="text-lg font-bold text-tech-purple mb-2">
-											顯示效果：
-										</h3>
-										<div
-											className="text-white/90 prose prose-invert max-w-none preview-content"
-											dangerouslySetInnerHTML={{
-												__html: listsCode,
-											}}
-										/>
-									</div>
+								<div className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-4">
+									<h3 className="text-lg font-bold text-tech-purple mb-2">
+										程式碼：
+									</h3>
+									<CodeBlock code={containersCode} language="html" />
 								</div>
 							</motion.div>
 
-							{/* Links and Images Section */}
+							{/* Preview Section */}
 							<motion.div
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
 								className="space-y-4"
 							>
-								<h2 className="text-2xl font-bold text-tech-highlight">
-									連結與圖片
-								</h2>
-								<div className="grid grid-cols-2 gap-4 bg-black/20 rounded-lg border border-tech-grid-bright/30">
-									<div className="p-4">
-										<h3 className="text-lg font-bold text-tech-purple mb-2">
-											程式碼：
-										</h3>
-										<CodeBlock code={linksAndImagesCode} language="html" />
-									</div>
-									<div className="p-4 border-l border-tech-grid-bright/30">
-										<h3 className="text-lg font-bold text-tech-purple mb-2">
-											顯示效果：
-										</h3>
+								<div className="bg-black/20 rounded-lg border border-tech-grid-bright/30 p-4">
+									<h3 className="text-lg font-bold text-tech-purple mb-4">
+										顯示效果與說明：
+									</h3>
+									<div className="space-y-6">
 										<div
-											className="text-white/90 prose prose-invert max-w-none prose-a:text-tech-highlight hover:prose-a:text-tech-highlight/80 preview-content"
+											className="text-white/90 preview-content"
 											dangerouslySetInnerHTML={{
-												__html: linksAndImagesCode,
+												__html: containersCode,
 											}}
 										/>
+										<div className="space-y-4 mt-6 border-t border-tech-grid-bright/30 pt-4">
+											<div className="flex items-start gap-2">
+												<div className="w-16 shrink-0 text-tech-highlight">
+													&lt;div&gt;
+												</div>
+												<div className="text-white/90">
+													- 區塊級元素，預設佔據整行
+													<br />
+													- 常用於頁面布局和分區
+													<br />- 會自動換行
+												</div>
+											</div>
+											<div className="flex items-start gap-2">
+												<div className="w-16 shrink-0 text-tech-highlight">
+													&lt;span&gt;
+												</div>
+												<div className="text-white/90">
+													- 行內元素，不會換行
+													<br />
+													- 用於文字內的局部樣式
+													<br />- 只佔用必要的空間
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</motion.div>
