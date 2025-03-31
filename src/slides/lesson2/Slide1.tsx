@@ -1,12 +1,12 @@
 import SlideLayout from "../../layouts/SlideLayout";
 import { motion } from "motion/react";
 
-export default function Slide17() {
+export default function Slide1() {
 	return (
 		<SlideLayout
 			prevSlide="/lesson1/slide16"
-			nextSlide="/lesson1/slide18"
-			currentSlide="17"
+			nextSlide="/lesson2/slide2"
+			currentSlide="1"
 			totalSlides="29"
 			courseName="NTNU Web Development Course"
 		>
