@@ -8,6 +8,7 @@ interface SlideLayoutProps {
 	prevSlide?: string;
 	currentSlide?: string;
 	totalSlides?: string;
+	courseName?: string;
 }
 
 export default function SlideLayout({
@@ -16,6 +17,7 @@ export default function SlideLayout({
 	prevSlide,
 	currentSlide = "01",
 	totalSlides = "05",
+	courseName = "NTNU Web Development Course",
 }: SlideLayoutProps) {
 	const navigate = useNavigate();
 
@@ -49,10 +51,10 @@ export default function SlideLayout({
 				{/* Header */}
 				<header className="absolute top-0 left-0 right-0 z-10">
 					<div className="container mx-auto px-8 h-16 flex items-center justify-between">
-						<div className="flex items-center gap-2">
+						<div className="flex items-center gap-3">
 							<div className="w-4 h-4 rotate-45 bg-tech-highlight" />
-							<span className="font-mono text-tech-highlight tracking-wider text-sm">
-								TECHSLIDES
+							<span className="font-mono text-tech-highlight/80 tracking-wide text-sm">
+								{courseName}
 							</span>
 						</div>
 						<div className="font-mono text-sm text-tech-highlight/60">
