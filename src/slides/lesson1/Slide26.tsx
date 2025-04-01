@@ -5,6 +5,7 @@ export default function Slide26() {
 	return (
 		<SlideLayout
 			prevSlide="/lesson1/slide25"
+			nextSlide="/lesson1/slide27"
 			currentSlide="26"
 			totalSlides="26"
 			courseName="NTNU Web Development Course"

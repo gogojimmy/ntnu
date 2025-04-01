@@ -25,6 +25,11 @@ import Slide23 from "./slides/lesson1/Slide23";
 import Slide24 from "./slides/lesson1/Slide24";
 import Slide25 from "./slides/lesson1/Slide25";
 import Slide26 from "./slides/lesson1/Slide26";
+import Slide27 from "./slides/lesson1/Slide27";
+import Slide28 from "./slides/lesson1/Slide28";
+import Slide29 from "./slides/lesson1/Slide29";
+import Slide30 from "./slides/lesson1/Slide30";
+import Slide31 from "./slides/lesson1/Slide31";
 import Lesson2Slide1 from "./slides/lesson2/Slide1";
 import Lesson2Slide2 from "./slides/lesson2/Slide2";
 import Lesson2Slide3 from "./slides/lesson2/Slide3";
@@ -35,7 +40,7 @@ const courses = [
 		id: 1,
 		title: "HTML/CSS 基礎與 AI 輔助開發入門",
 		description: "學習網頁開發基礎，並運用 AI 工具加速開發流程",
-		totalSlides: "26",
+		totalSlides: "31",
 		icon: (
 			<svg
 				className="w-6 h-6"
@@ -199,6 +204,11 @@ export default function App() {
 				<Route path="/lesson1/slide24" element={<Slide24 />} />
 				<Route path="/lesson1/slide25" element={<Slide25 />} />
 				<Route path="/lesson1/slide26" element={<Slide26 />} />
+				<Route path="/lesson1/slide27" element={<Slide27 />} />
+				<Route path="/lesson1/slide28" element={<Slide28 />} />
+				<Route path="/lesson1/slide29" element={<Slide29 />} />
+				<Route path="/lesson1/slide30" element={<Slide30 />} />
+				<Route path="/lesson1/slide31" element={<Slide31 />} />
 				<Route path="/lesson2/slide1" element={<Lesson2Slide1 />} />
 				<Route path="/lesson2/slide2" element={<Lesson2Slide2 />} />
 				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
