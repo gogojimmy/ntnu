@@ -1,7 +1,40 @@
 import SlideLayout from "../../layouts/SlideLayout";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function Slide26() {
+	const [countdown, setCountdown] = useState({
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0,
+	});
+
+	useEffect(() => {
+		const deadline = new Date("2025-04-07T23:59:59");
+
+		const updateCountdown = () => {
+			const now = new Date();
+			const diff = deadline.getTime() - now.getTime();
+
+			if (diff > 0) {
+				const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+				const hours = Math.floor(
+					(diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				);
+				const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+				setCountdown({ days, hours, minutes, seconds });
+			}
+		};
+
+		updateCountdown();
+		const timer = setInterval(updateCountdown, 1000);
+
+		return () => clearInterval(timer);
+	}, []);
+
 	return (
 		<SlideLayout
 			prevSlide="/lesson1/slide25"
@@ -13,6 +46,40 @@ export default function Slide26() {
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
+
+				{/* Deadline Notice */}
+				<motion.div
+					className="absolute top-6 right-8 bg-gradient-to-r from-red-500/80 to-orange-500/80 px-8 py-4 rounded-lg border-2 border-red-400 shadow-lg backdrop-blur-sm z-10"
+					animate={{
+						scale: [1, 1.02, 1],
+						rotate: [-1, 1, -1],
+						boxShadow: [
+							"0 0 0 0 rgba(239, 68, 68, 0)",
+							"0 0 30px 15px rgba(239, 68, 68, 0.3)",
+							"0 0 0 0 rgba(239, 68, 68, 0)",
+						],
+					}}
+					transition={{
+						duration: 2,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+				>
+					<div className="flex flex-col">
+						<div>
+							<div className="text-white font-bold text-lg mb-1">
+								作業繳交期限
+							</div>
+							<div className="text-white text-3xl font-black">4/7 23:59</div>
+						</div>
+						<div className="mt-2">
+							<div className="text-white/80 text-lg">
+								倒數 {countdown.days}天{countdown.hours}時{countdown.minutes}分
+								{countdown.seconds}秒
+							</div>
+						</div>
+					</div>
+				</motion.div>
 
 				{/* Content */}
 				<div className="relative px-12 py-6">
