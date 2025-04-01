@@ -37,7 +37,7 @@ export default function Slide17() {
 			prevSlide="/lesson1/slide16"
 			nextSlide="/lesson1/slide18"
 			currentSlide="17"
-			totalSlides="20"
+			totalSlides="31"
 			courseName="NTNU Web Development Course"
 		>
 			<div className="relative h-full flex flex-col justify-center">

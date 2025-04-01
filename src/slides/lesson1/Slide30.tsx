@@ -6,8 +6,8 @@ export default function Slide30() {
 		<SlideLayout
 			prevSlide="/lesson1/slide29"
 			nextSlide="/lesson1/slide31"
-			currentSlide={30}
-			totalSlides={31}
+			currentSlide="30"
+			totalSlides="31"
 			courseName="lesson1"
 		>
 			<div className="relative h-full flex flex-col justify-center">

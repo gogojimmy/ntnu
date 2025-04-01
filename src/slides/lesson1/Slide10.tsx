@@ -105,7 +105,7 @@ p {
 			prevSlide="/lesson1/slide9"
 			nextSlide="/lesson1/slide11"
 			currentSlide="10"
-			totalSlides="25"
+			totalSlides="31"
 			courseName="NTNU Web Development Course"
 		>
 			<PreviewStyles />

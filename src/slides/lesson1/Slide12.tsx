@@ -193,7 +193,7 @@ export default function Slide12() {
 			prevSlide="/lesson1/slide11"
 			nextSlide="/lesson1/slide13"
 			currentSlide="12"
-			totalSlides="25"
+			totalSlides="31"
 			courseName="NTNU Web Development Course"
 		>
 			<PreviewStyles />
