@@ -42,13 +42,7 @@ export default function Slide18() {
 }`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide17"
-			nextSlide="/lesson1/slide19"
-			currentSlide="18"
-			totalSlides="31"
-			courseName="NTNU Web Development Course"
-		>
+		<SlideLayout currentSlide="18">
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />

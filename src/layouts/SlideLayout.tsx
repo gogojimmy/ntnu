@@ -7,14 +7,14 @@ interface SlideLayoutProps {
 	children: ReactNode;
 	currentSlide?: string;
 	courseName?: string;
-	totalSlidesInLesson: number;
+	totalSlidesInLesson?: number;
 }
 
 export default function SlideLayout({
 	children,
 	currentSlide,
 	courseName = "NTNU Web Development Course",
-	totalSlidesInLesson,
+	totalSlidesInLesson = 17,
 }: SlideLayoutProps) {
 	const navigate = useNavigate();
 	const location = useLocation();

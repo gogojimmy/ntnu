@@ -3,13 +3,7 @@ import { motion } from "motion/react";
 
 export default function Slide27() {
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide26"
-			nextSlide="/lesson1/slide28"
-			currentSlide="27"
-			totalSlides="31"
-			courseName="lesson1"
-		>
+		<SlideLayout currentSlide="27">
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />

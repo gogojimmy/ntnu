@@ -5,10 +5,8 @@ import CodeBlock from "../../components/CodeBlock";
 export default function Slide2() {
 	return (
 		<SlideLayout
-			prevSlide="/lesson1/slide1"
-			nextSlide="/lesson1/slide3"
 			currentSlide="02"
-			totalSlides="31"
+			totalSlidesInLesson={31}
 			courseName="lesson1"
 		>
 			<div className="relative h-full flex flex-col justify-center">

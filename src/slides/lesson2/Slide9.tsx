@@ -90,17 +90,20 @@ export default function Slide9() {
 							<li>包含三張卡片 (Card)。</li>
 							<li>
 								在
-								<strong class="text-tech-highlight">
+								<strong className="text-tech-highlight">
 									中型螢幕 (md) 或以上
 								</strong>
 								，卡片呈現為
-								<strong class="text-tech-highlight">水平三欄</strong>。
+								<strong className="text-tech-highlight">水平三欄</strong>。
 							</li>
 							<li>
 								在
-								<strong class="text-tech-highlight">手機尺寸 (小於 md)</strong>
+								<strong className="text-tech-highlight">
+									手機尺寸 (小於 md)
+								</strong>
 								，卡片自動
-								<strong class="text-tech-highlight">堆疊成垂直單欄</strong>。
+								<strong className="text-tech-highlight">堆疊成垂直單欄</strong>
+								。
 							</li>
 						</ul>
 					</motion.div>

@@ -82,11 +82,7 @@ export default function Slide6() {
 	);
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson2/slide5"
-			currentSlide="6"
-			courseName="lesson2"
-		>
+		<SlideLayout currentSlide="6">
 			<div className="flex flex-col h-full justify-center items-center px-16 py-8">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}

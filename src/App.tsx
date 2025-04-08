@@ -75,9 +75,9 @@ const courses = [
 	},
 	{
 		id: 2,
-		title: "Design System / CSS Framework 與 AI 輔助",
-		description: "學習現代化的 CSS 框架與設計系統，並運用 AI 提升開發效率",
-		totalSlides: "5",
+		title: "Design System / CSS Framework",
+		description: "學習現代化的 CSS 框架與設計系統",
+		totalSlides: "17",
 		icon: (
 			<svg
 				className="w-6 h-6"
@@ -271,7 +271,13 @@ const lesson1Routes = routes.filter((r) => r.path.startsWith("/lesson1/"));
 const lesson2Routes = routes.filter((r) => r.path.startsWith("/lesson2/"));
 // Add more lessons here if needed
 
-const slideCounts = {
+// Define type for slideCounts keys
+type LessonKey = `lesson${number}`;
+
+const slideCounts: { [key in LessonKey]?: number } & {
+	lesson1: number;
+	lesson2: number;
+} = {
 	lesson1: lesson1Routes.length,
 	lesson2: lesson2Routes.length,
 	// Add more lessons here if needed
@@ -290,9 +296,12 @@ export default function App() {
 						const lessonNumber = lessonMatch
 							? parseInt(lessonMatch[1], 10)
 							: null;
-						const totalSlidesInLesson = lessonNumber
-							? slideCounts[`lesson${lessonNumber}`]
-							: 0;
+						// Use a type-safe key
+						const lessonKey = lessonNumber
+							? (`lesson${lessonNumber}` as LessonKey)
+							: undefined;
+						const totalSlidesInLesson =
+							lessonKey && slideCounts[lessonKey] ? slideCounts[lessonKey] : 0;
 
 						// Get the component type from the route definition
 						const SlideComponent = route.element;

@@ -24,13 +24,7 @@ export default function Slide3() {
 }`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson2/slide2"
-			nextSlide="/lesson2/slide4"
-			currentSlide="3"
-			totalSlides="4"
-			courseName="lesson2"
-		>
+		<SlideLayout currentSlide="3">
 			<div
 				className={`relative h-full flex flex-col justify-center bg-black/40`}
 			>

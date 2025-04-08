@@ -134,9 +134,9 @@ export default function Slide11() {
 									</code>{" "}
 									(如 <code>.btn-primary</code>, <code>.btn-outline-dark</code>)
 									來定義按鈕樣式。 可結合
-									<strong class="text-tech-blue/80">尺寸類別</strong> (
+									<strong className="text-tech-blue/80">尺寸類別</strong> (
 									<code>.btn-sm</code>, <code>.btn-lg</code>) 和
-									<strong class="text-tech-blue/80">工具類別</strong> (如{" "}
+									<strong className="text-tech-blue/80">工具類別</strong> (如{" "}
 									<code>p-*</code>, <code>mt-*</code>) 進行微調。
 								</p>
 							</div>
@@ -152,9 +152,11 @@ export default function Slide11() {
 									<code>&lt;li&gt;</code>, <code>.nav-link</code> 於{" "}
 									<code>&lt;a&gt;</code>。 可透過 <code>.active</code> 和{" "}
 									<code>.disabled</code> 標示連結狀態，並利用
-									<strong class="text-tech-green/80">Flexbox 工具類別</strong> (
-									<code>.justify-content-*</code>) 控制對齊，以及其他
-									<strong class="text-tech-green/80">工具類別</strong>
+									<strong className="text-tech-green/80">
+										Flexbox 工具類別
+									</strong>{" "}
+									(<code>.justify-content-*</code>) 控制對齊，以及其他
+									<strong className="text-tech-green/80">工具類別</strong>
 									客製化外觀。
 								</p>
 							</div>

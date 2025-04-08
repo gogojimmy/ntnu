@@ -235,13 +235,7 @@ export default function Slide2() {
 
 	return (
 		<ErrorBoundary>
-			<SlideLayout
-				prevSlide="/lesson2/slide1"
-				nextSlide="/lesson2/slide3"
-				currentSlide="2"
-				totalSlides="3"
-				courseName="lesson2"
-			>
+			<SlideLayout currentSlide="2">
 				<div className="relative h-full flex flex-col justify-center">
 					<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
 					<div className="relative px-16 py-8">

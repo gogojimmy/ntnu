@@ -4,13 +4,7 @@ import githubImage from "../../assets/github.png";
 
 export default function Slide28() {
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide27"
-			nextSlide="/lesson1/slide29"
-			currentSlide="28"
-			totalSlides="31"
-			courseName="lesson1"
-		>
+		<SlideLayout currentSlide="28">
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />

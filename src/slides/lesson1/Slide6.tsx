@@ -53,12 +53,7 @@ export default function Slide6() {
 不會換行`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide5"
-			nextSlide="/lesson1/slide7"
-			currentSlide="06"
-			courseName="NTNU Web Development Course"
-		>
+		<SlideLayout currentSlide="06">
 			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />

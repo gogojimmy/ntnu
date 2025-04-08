@@ -1,13 +1,17 @@
 import SlideLayout from "../../layouts/SlideLayout";
 import { motion } from "motion/react";
 
-export default function Slide1() {
+// Define props
+interface Slide1Props {
+	totalSlidesInLesson: number;
+}
+
+export default function Slide1({ totalSlidesInLesson }: Slide1Props) {
 	return (
 		<SlideLayout
-			nextSlide="/lesson1/slide2"
 			currentSlide="01"
-			totalSlides="31"
-			courseName="NTNU Web Development Course"
+			totalSlidesInLesson={totalSlidesInLesson}
+			courseName="HTML/CSS 基礎與 AI 輔助開發入門"
 		>
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}

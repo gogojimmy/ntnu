@@ -75,12 +75,7 @@ export default function Slide5() {
 	const tailwindSrcDoc = createSrcDoc(tailwindCode, tailwindHead);
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson2/slide4"
-			nextSlide="/lesson2/slide6"
-			currentSlide="5"
-			courseName="lesson2"
-		>
+		<SlideLayout currentSlide="5">
 			<div className="relative h-full flex flex-col justify-center">
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
 				<div

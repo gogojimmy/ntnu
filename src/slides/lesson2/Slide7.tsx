@@ -77,12 +77,7 @@ export default function Slide7() {
 	const currentPreview = openDialog ? previewData[openDialog] : null;
 
 	return (
-		<SlideLayout
-			// prevSlide="/lesson2/slide6"
-			// nextSlide="/lesson2/slide8" // Add if Slide 8 exists
-			currentSlide="7"
-			courseName="lesson2"
-		>
+		<SlideLayout currentSlide="7">
 			<div className="relative h-full flex flex-col justify-center">
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
 
@@ -260,7 +255,7 @@ export default function Slide7() {
 								leaveTo="opacity-0 scale-95"
 							>
 								<Dialog.Panel
-									className="w-full max-w-4xl h-[75vh] transform overflow-hidden rounded-lg bg-[#1e1e1e] border border-tech-grid-bright/50 p-6 text-left align-middle shadow-xl transition-all flex flex-col"
+									className="w-full max-w-6xl h-[75vh] transform overflow-hidden rounded-lg bg-[#1e1e1e] border border-tech-grid-bright/50 p-6 text-left align-middle shadow-xl transition-all flex flex-col"
 									style={{
 										width: previewWidth,
 										transition: "width 0.3s ease-in-out",

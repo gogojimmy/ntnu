@@ -167,13 +167,7 @@ export default function Slide13() {
 }`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide12"
-			nextSlide="/lesson1/slide14"
-			currentSlide="13"
-			totalSlides="31"
-			courseName="NTNU Web Development Course"
-		>
+		<SlideLayout currentSlide="13">
 			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}

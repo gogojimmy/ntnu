@@ -180,7 +180,7 @@ export default function Slide13() {
 								<p className="text-yellow-200/90 text-sm">
 									Modal 和 Collapse 等互動元件需要 Bootstrap 的 JavaScript
 									函式庫才能運作。 最簡單的方式是引入
-									<strong class="text-yellow-200">
+									<strong className="text-yellow-200">
 										包含 Popper.js 的 Bundle 檔案
 									</strong>
 									。 通常建議放在 <code>&lt;/body&gt;</code> 標籤之前載入。

@@ -101,13 +101,7 @@ p {
 </div>`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide9"
-			nextSlide="/lesson1/slide11"
-			currentSlide="10"
-			totalSlides="31"
-			courseName="NTNU Web Development Course"
-		>
+		<SlideLayout currentSlide="10">
 			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}

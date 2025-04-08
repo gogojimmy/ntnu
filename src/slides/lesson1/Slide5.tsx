@@ -69,12 +69,7 @@ export default function Slide5() {
 />`;
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson1/slide4"
-			nextSlide="/lesson1/slide6"
-			currentSlide="05"
-			courseName="NTNU Web Development Course"
-		>
+		<SlideLayout currentSlide="05">
 			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}

@@ -59,11 +59,9 @@ export default function Slide3() {
 
 	return (
 		<SlideLayout
-			prevSlide="/lesson1/slide2"
-			nextSlide="/lesson1/slide4"
 			currentSlide="03"
-			totalSlides="31"
-			courseName="NTNU Web Development Course"
+			totalSlidesInLesson={31}
+			courseName="lesson1"
 		>
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}

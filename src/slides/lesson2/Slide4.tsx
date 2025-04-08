@@ -135,13 +135,7 @@ export default function Slide4() {
 	};
 
 	return (
-		<SlideLayout
-			prevSlide="/lesson2/slide3"
-			nextSlide="/lesson2/slide5"
-			currentSlide="4"
-			totalSlides="5"
-			courseName="lesson2"
-		>
+		<SlideLayout currentSlide="4">
 			{/* Apply theme styles and background to the outermost div */}
 			<div
 				className={`relative h-full flex flex-col justify-center ${theme.bgSlide}`}
