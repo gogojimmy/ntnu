@@ -38,6 +38,7 @@ import Lesson2Slide5 from "./slides/lesson2/Slide5";
 import Lesson2Slide6 from "./slides/lesson2/Slide6";
 import Lesson2Slide7 from "./slides/lesson2/Slide7";
 import Lesson2Slide8 from "./slides/lesson2/Slide8";
+import Lesson2Slide9 from "./slides/lesson2/Slide9";
 import { motion } from "motion/react";
 
 const courses = [
@@ -243,6 +244,7 @@ const routes = [
 	{ path: "/lesson2/slide6", element: <Lesson2Slide6 /> },
 	{ path: "/lesson2/slide7", element: <Lesson2Slide7 /> },
 	{ path: "/lesson2/slide8", element: <Lesson2Slide8 /> },
+	{ path: "/lesson2/slide9", element: <Lesson2Slide9 /> },
 ];
 
 // Extract slide paths for the context provider
