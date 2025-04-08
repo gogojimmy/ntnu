@@ -34,6 +34,7 @@ import Lesson2Slide1 from "./slides/lesson2/Slide1";
 import Lesson2Slide2 from "./slides/lesson2/Slide2";
 import Lesson2Slide3 from "./slides/lesson2/Slide3";
 import Lesson2Slide4 from "./slides/lesson2/Slide4";
+import Lesson2Slide5 from "./slides/lesson2/Slide5";
 import { motion } from "motion/react";
 
 const courses = [
@@ -62,7 +63,7 @@ const courses = [
 		id: 2,
 		title: "Design System / CSS Framework 與 AI 輔助",
 		description: "學習現代化的 CSS 框架與設計系統，並運用 AI 提升開發效率",
-		totalSlides: "4",
+		totalSlides: "5",
 		icon: (
 			<svg
 				className="w-6 h-6"
@@ -235,6 +236,7 @@ export default function App() {
 				<Route path="/lesson2/slide2" element={<Lesson2Slide2 />} />
 				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
 				<Route path="/lesson2/slide4" element={<Lesson2Slide4 />} />
+				<Route path="/lesson2/slide5" element={<Lesson2Slide5 />} />
 			</Routes>
 		</Router>
 	);

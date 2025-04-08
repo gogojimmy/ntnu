@@ -137,9 +137,9 @@ export default function Slide4() {
 	return (
 		<SlideLayout
 			prevSlide="/lesson2/slide3"
-			// nextSlide - Add if there are more slides later
+			nextSlide="/lesson2/slide5"
 			currentSlide="4"
-			totalSlides="4" // Updated total slides for lesson 2
+			totalSlides="5"
 			courseName="lesson2"
 		>
 			{/* Apply theme styles and background to the outermost div */}
