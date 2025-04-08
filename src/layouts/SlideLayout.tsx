@@ -1,13 +1,13 @@
 import { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
+import { useSlides } from "../context/SlidesContext";
 
 interface SlideLayoutProps {
 	children: ReactNode;
 	nextSlide?: string;
 	prevSlide?: string;
 	currentSlide?: string;
-	totalSlides?: string;
 	courseName?: string;
 }
 
@@ -16,10 +16,10 @@ export default function SlideLayout({
 	nextSlide,
 	prevSlide,
 	currentSlide = "01",
-	totalSlides = "05",
 	courseName = "NTNU Web Development Course",
 }: SlideLayoutProps) {
 	const navigate = useNavigate();
+	const { totalSlides } = useSlides();
 
 	const handleKeyDown = (e: KeyboardEvent) => {
 		if (e.key === "ArrowRight" && nextSlide) {

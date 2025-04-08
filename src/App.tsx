@@ -35,6 +35,7 @@ import Lesson2Slide2 from "./slides/lesson2/Slide2";
 import Lesson2Slide3 from "./slides/lesson2/Slide3";
 import Lesson2Slide4 from "./slides/lesson2/Slide4";
 import Lesson2Slide5 from "./slides/lesson2/Slide5";
+import Lesson2Slide6 from "./slides/lesson2/Slide6";
 import { motion } from "motion/react";
 
 const courses = [
@@ -237,6 +238,7 @@ export default function App() {
 				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
 				<Route path="/lesson2/slide4" element={<Lesson2Slide4 />} />
 				<Route path="/lesson2/slide5" element={<Lesson2Slide5 />} />
+				<Route path="/lesson2/slide6" element={<Lesson2Slide6 />} />
 			</Routes>
 		</Router>
 	);

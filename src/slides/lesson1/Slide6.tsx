@@ -57,18 +57,14 @@ export default function Slide6() {
 			prevSlide="/lesson1/slide5"
 			nextSlide="/lesson1/slide7"
 			currentSlide="06"
-			totalSlides="31"
 			courseName="NTNU Web Development Course"
 		>
 			<PreviewStyles />
 			<div className="relative h-full flex flex-col justify-center">
-				{/* Background Elements */}
 				<div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
 
-				{/* Content */}
 				<div className="relative px-16 py-8">
 					<div className="space-y-8">
-						{/* Title */}
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -81,7 +77,6 @@ export default function Slide6() {
 						</motion.div>
 
 						<div className="grid grid-cols-2 gap-8">
-							{/* Code Section */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -96,7 +91,6 @@ export default function Slide6() {
 								</div>
 							</motion.div>
 
-							{/* Preview Section */}
 							<motion.div
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
@@ -145,7 +139,6 @@ export default function Slide6() {
 					</div>
 				</div>
 
-				{/* Decorative Elements */}
 				<motion.div
 					className="absolute -left-4 top-1/4 w-32 h-32 bg-tech-purple/20 blur-[64px] rounded-full"
 					initial={{ opacity: 0, scale: 0.8 }}

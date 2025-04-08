@@ -77,8 +77,8 @@ export default function Slide5() {
 	return (
 		<SlideLayout
 			prevSlide="/lesson2/slide4"
+			nextSlide="/lesson2/slide6"
 			currentSlide="5"
-			totalSlides="5"
 			courseName="lesson2"
 		>
 			<div className="relative h-full flex flex-col justify-center">
