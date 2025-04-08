@@ -49,6 +49,7 @@ import Lesson2Slide16 from "./slides/lesson2/Slide16";
 import Lesson2Slide17 from "./slides/lesson2/Slide17";
 
 import { motion } from "motion/react";
+import { SlidesProvider } from "./context/SlidesContext";
 
 const courses = [
 	{
@@ -212,71 +213,103 @@ function HomePage() {
 // Define the routes structure
 const routes = [
 	// Lesson 1 Routes
-	{ path: "/lesson1/slide1", element: <Slide1 /> },
-	{ path: "/lesson1/slide2", element: <Slide2 /> },
-	{ path: "/lesson1/slide3", element: <Slide3 /> },
-	{ path: "/lesson1/slide4", element: <Slide4 /> },
-	{ path: "/lesson1/slide5", element: <Slide5 /> },
-	{ path: "/lesson1/slide6", element: <Slide6 /> },
-	{ path: "/lesson1/slide7", element: <Slide7 /> },
-	{ path: "/lesson1/slide8", element: <Slide8 /> },
-	{ path: "/lesson1/slide9", element: <Slide9 /> },
-	{ path: "/lesson1/slide10", element: <Slide10 /> },
-	{ path: "/lesson1/slide11", element: <Slide11 /> },
-	{ path: "/lesson1/slide12", element: <Slide12 /> },
-	{ path: "/lesson1/slide13", element: <Slide13 /> },
-	{ path: "/lesson1/slide14", element: <Slide14 /> },
-	{ path: "/lesson1/slide15", element: <Slide15 /> },
-	{ path: "/lesson1/slide16", element: <Slide16 /> },
-	{ path: "/lesson1/slide17", element: <Slide17 /> },
-	{ path: "/lesson1/slide18", element: <Slide18 /> },
-	{ path: "/lesson1/slide19", element: <Slide19 /> },
-	{ path: "/lesson1/slide20", element: <Slide20 /> },
-	{ path: "/lesson1/slide21", element: <Slide21 /> },
-	{ path: "/lesson1/slide22", element: <Slide22 /> },
-	{ path: "/lesson1/slide23", element: <Slide23 /> },
-	{ path: "/lesson1/slide24", element: <Slide24 /> },
-	{ path: "/lesson1/slide25", element: <Slide25 /> },
-	{ path: "/lesson1/slide26", element: <Slide26 /> },
-	{ path: "/lesson1/slide27", element: <Slide27 /> },
-	{ path: "/lesson1/slide28", element: <Slide28 /> },
-	{ path: "/lesson1/slide29", element: <Slide29 /> },
-	{ path: "/lesson1/slide30", element: <Slide30 /> },
-	{ path: "/lesson1/slide31", element: <Slide31 /> },
+	{ path: "/lesson1/slide1", element: Slide1 },
+	{ path: "/lesson1/slide2", element: Slide2 },
+	{ path: "/lesson1/slide3", element: Slide3 },
+	{ path: "/lesson1/slide4", element: Slide4 },
+	{ path: "/lesson1/slide5", element: Slide5 },
+	{ path: "/lesson1/slide6", element: Slide6 },
+	{ path: "/lesson1/slide7", element: Slide7 },
+	{ path: "/lesson1/slide8", element: Slide8 },
+	{ path: "/lesson1/slide9", element: Slide9 },
+	{ path: "/lesson1/slide10", element: Slide10 },
+	{ path: "/lesson1/slide11", element: Slide11 },
+	{ path: "/lesson1/slide12", element: Slide12 },
+	{ path: "/lesson1/slide13", element: Slide13 },
+	{ path: "/lesson1/slide14", element: Slide14 },
+	{ path: "/lesson1/slide15", element: Slide15 },
+	{ path: "/lesson1/slide16", element: Slide16 },
+	{ path: "/lesson1/slide17", element: Slide17 },
+	{ path: "/lesson1/slide18", element: Slide18 },
+	{ path: "/lesson1/slide19", element: Slide19 },
+	{ path: "/lesson1/slide20", element: Slide20 },
+	{ path: "/lesson1/slide21", element: Slide21 },
+	{ path: "/lesson1/slide22", element: Slide22 },
+	{ path: "/lesson1/slide23", element: Slide23 },
+	{ path: "/lesson1/slide24", element: Slide24 },
+	{ path: "/lesson1/slide25", element: Slide25 },
+	{ path: "/lesson1/slide26", element: Slide26 },
+	{ path: "/lesson1/slide27", element: Slide27 },
+	{ path: "/lesson1/slide28", element: Slide28 },
+	{ path: "/lesson1/slide29", element: Slide29 },
+	{ path: "/lesson1/slide30", element: Slide30 },
+	{ path: "/lesson1/slide31", element: Slide31 },
 
 	// Lesson 2 Routes
-	{ path: "/lesson2/slide1", element: <Lesson2Slide1 /> },
-	{ path: "/lesson2/slide2", element: <Lesson2Slide2 /> },
-	{ path: "/lesson2/slide3", element: <Lesson2Slide3 /> },
-	{ path: "/lesson2/slide4", element: <Lesson2Slide4 /> },
-	{ path: "/lesson2/slide5", element: <Lesson2Slide5 /> },
-	{ path: "/lesson2/slide6", element: <Lesson2Slide6 /> },
-	{ path: "/lesson2/slide7", element: <Lesson2Slide7 /> },
-	{ path: "/lesson2/slide8", element: <Lesson2Slide8 /> },
-	{ path: "/lesson2/slide9", element: <Lesson2Slide9 /> },
-	{ path: "/lesson2/slide10", element: <Lesson2Slide10 /> },
-	{ path: "/lesson2/slide11", element: <Lesson2Slide11 /> },
-	{ path: "/lesson2/slide12", element: <Lesson2Slide12 /> },
-	{ path: "/lesson2/slide13", element: <Lesson2Slide13 /> },
-	{ path: "/lesson2/slide14", element: <Lesson2Slide14 /> },
-	{ path: "/lesson2/slide15", element: <Lesson2Slide15 /> },
-	{ path: "/lesson2/slide16", element: <Lesson2Slide16 /> },
-	{ path: "/lesson2/slide17", element: <Lesson2Slide17 /> },
+	{ path: "/lesson2/slide1", element: Lesson2Slide1 },
+	{ path: "/lesson2/slide2", element: Lesson2Slide2 },
+	{ path: "/lesson2/slide3", element: Lesson2Slide3 },
+	{ path: "/lesson2/slide4", element: Lesson2Slide4 },
+	{ path: "/lesson2/slide5", element: Lesson2Slide5 },
+	{ path: "/lesson2/slide6", element: Lesson2Slide6 },
+	{ path: "/lesson2/slide7", element: Lesson2Slide7 },
+	{ path: "/lesson2/slide8", element: Lesson2Slide8 },
+	{ path: "/lesson2/slide9", element: Lesson2Slide9 },
+	{ path: "/lesson2/slide10", element: Lesson2Slide10 },
+	{ path: "/lesson2/slide11", element: Lesson2Slide11 },
+	{ path: "/lesson2/slide12", element: Lesson2Slide12 },
+	{ path: "/lesson2/slide13", element: Lesson2Slide13 },
+	{ path: "/lesson2/slide14", element: Lesson2Slide14 },
+	{ path: "/lesson2/slide15", element: Lesson2Slide15 },
+	{ path: "/lesson2/slide16", element: Lesson2Slide16 },
+	{ path: "/lesson2/slide17", element: Lesson2Slide17 },
 ];
 
-// Extract slide paths for the context provider
-// Note: Ensure the order here matches the desired navigation order
-export const allSlidePaths = routes.map((route) => route.path);
+// Calculate slide paths and counts per lesson
+const allSlidePaths = routes.map((r) => r.path);
+const lesson1Routes = routes.filter((r) => r.path.startsWith("/lesson1/"));
+const lesson2Routes = routes.filter((r) => r.path.startsWith("/lesson2/"));
+// Add more lessons here if needed
+
+const slideCounts = {
+	lesson1: lesson1Routes.length,
+	lesson2: lesson2Routes.length,
+	// Add more lessons here if needed
+};
 
 export default function App() {
 	return (
-		<Router>
-			<Routes>
-				<Route path="/" element={<HomePage />} />
-				{routes.map((route) => (
-					<Route key={route.path} path={route.path} element={route.element} />
-				))}
-			</Routes>
-		</Router>
+		// Wrap everything in SlidesProvider
+		<SlidesProvider slidePaths={allSlidePaths}>
+			<Router>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					{/* Map routes and pass counts */}
+					{routes.map((route) => {
+						const lessonMatch = route.path.match(/\/lesson(\d+)\//);
+						const lessonNumber = lessonMatch
+							? parseInt(lessonMatch[1], 10)
+							: null;
+						const totalSlidesInLesson = lessonNumber
+							? slideCounts[`lesson${lessonNumber}`]
+							: 0;
+
+						// Get the component type from the route definition
+						const SlideComponent = route.element;
+
+						return (
+							<Route
+								key={route.path}
+								path={route.path}
+								// Render the component, passing the prop
+								element={
+									<SlideComponent totalSlidesInLesson={totalSlidesInLesson} />
+								}
+							/>
+						);
+					})}
+				</Routes>
+			</Router>
+		</SlidesProvider>
 	);
 }

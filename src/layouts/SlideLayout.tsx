@@ -7,16 +7,18 @@ interface SlideLayoutProps {
 	children: ReactNode;
 	currentSlide?: string;
 	courseName?: string;
+	totalSlidesInLesson: number;
 }
 
 export default function SlideLayout({
 	children,
 	currentSlide,
 	courseName = "NTNU Web Development Course",
+	totalSlidesInLesson,
 }: SlideLayoutProps) {
 	const navigate = useNavigate();
 	const location = useLocation();
-	const { totalSlides, getPrevSlidePath, getNextSlidePath } = useSlides();
+	const { getPrevSlidePath, getNextSlidePath } = useSlides();
 
 	const currentPath = location.pathname;
 	const prevPath = getPrevSlidePath(currentPath);
@@ -68,7 +70,7 @@ export default function SlideLayout({
 							</span>
 						</div>
 						<div className="font-mono text-lg text-tech-highlight/60">
-							{derivedCurrentSlide}/{totalSlides}
+							{derivedCurrentSlide}/{totalSlidesInLesson}
 						</div>
 					</div>
 				</header>

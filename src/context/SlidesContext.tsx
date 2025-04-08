@@ -1,6 +1,5 @@
 import React, {
 	createContext,
-	useState,
 	useContext,
 	ReactNode,
 	useCallback,
@@ -8,7 +7,6 @@ import React, {
 
 // Define the shape of the context data
 interface SlidesContextProps {
-	totalSlides: number;
 	slidePaths: string[];
 	getNextSlidePath: (currentPath: string) => string | undefined;
 	getPrevSlidePath: (currentPath: string) => string | undefined;
@@ -20,20 +18,14 @@ const SlidesContext = createContext<SlidesContextProps | undefined>(undefined);
 // Define the props for the provider component
 interface SlidesProviderProps {
 	children: ReactNode;
-	initialTotalSlides?: number;
 	slidePaths?: string[]; // Add slidePaths prop
 }
 
 // Create the provider component
 export const SlidesProvider: React.FC<SlidesProviderProps> = ({
 	children,
-	initialTotalSlides = 0, // Default to 0 if not provided
 	slidePaths = [], // Default to empty array
 }) => {
-	const [totalSlides] = useState<number>(
-		initialTotalSlides || slidePaths.length
-	); // Use initial or calculated total
-
 	// Function to find the next slide path
 	const getNextSlidePath = useCallback(
 		(currentPath: string): string | undefined => {
@@ -59,7 +51,6 @@ export const SlidesProvider: React.FC<SlidesProviderProps> = ({
 	);
 
 	const value = {
-		totalSlides,
 		slidePaths,
 		getNextSlidePath,
 		getPrevSlidePath,
