@@ -1,25 +1,6 @@
 import SlideLayout from "../../layouts/SlideLayout";
 import { motion } from "motion/react";
-import { Highlight, themes } from "prism-react-renderer";
-
-const CodeBlock = ({ code, language }: { code: string; language: string }) => (
-	<Highlight theme={themes.nightOwl} code={code.trim()} language={language}>
-		{({ style, tokens, getLineProps, getTokenProps }) => (
-			<pre
-				className="bg-black/30 p-3 rounded-md overflow-x-auto text-xs"
-				style={style}
-			>
-				{tokens.map((line, i) => (
-					<div key={i} {...getLineProps({ line })}>
-						{line.map((token, key) => (
-							<span key={key} {...getTokenProps({ token })} />
-						))}
-					</div>
-				))}
-			</pre>
-		)}
-	</Highlight>
-);
+import CodeBlock from "../../components/CodeBlock";
 
 export default function Slide2() {
 	return (
@@ -28,7 +9,7 @@ export default function Slide2() {
 			nextSlide="/lesson1/slide3"
 			currentSlide="02"
 			totalSlides="31"
-			courseName="NTNU Web Development Course"
+			courseName="lesson1"
 		>
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
