@@ -4,11 +4,10 @@ import { motion } from "motion/react";
 export default function Slide1() {
 	return (
 		<SlideLayout
-			prevSlide="/lesson1/slide16"
 			nextSlide="/lesson2/slide2"
 			currentSlide="1"
-			totalSlides="29"
-			courseName="NTNU Web Development Course"
+			totalSlides="3"
+			courseName="lesson2"
 		>
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
@@ -24,109 +23,120 @@ export default function Slide1() {
 							transition={{ duration: 0.6 }}
 						>
 							<h1 className="text-4xl font-bold text-white mb-2">
-								我們為什麼需要 Design System？
+								Design System 的核心概念
 							</h1>
 							<h2 className="text-2xl text-tech-highlight/80">
-								設計系統帶來的好處
+								設計系統如何提升設計與開發效率
 							</h2>
 						</motion.div>
 
 						<div className="grid grid-cols-2 gap-8">
-							{/* Left Column - Benefits */}
+							{/* Left Column - Core Concepts */}
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}
 								className="bg-[#1a1a1a] rounded-lg p-8 flex flex-col"
 							>
+								<h3 className="text-2xl font-bold text-tech-highlight mb-6">
+									核心概念
+								</h3>
 								<div className="space-y-6">
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>✅</span> 提升一致性
+											<span>🎯</span> 統一的設計語言
 										</h4>
 										<p className="text-gray-300 leading-relaxed">
-											不同設計師／工程師開發的畫面看起來風格統一。
+											建立一致的視覺元素、間距、色彩和互動模式，確保產品體驗的一致性。
 										</p>
 									</div>
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>✅</span> 加快開發速度
+											<span>🧩</span> 可重複使用的元件
 										</h4>
 										<p className="text-gray-300 leading-relaxed">
-											使用現有元件，重複利用，不需要每次都重做。
+											將介面拆分為可重複使用的元件，每個元件都有明確的使用規範和變體。
 										</p>
 									</div>
 								</div>
 							</motion.div>
 
-							{/* Right Column - More Benefits */}
+							{/* Right Column - Efficiency Benefits */}
 							<motion.div
 								initial={{ opacity: 0, x: 20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6, delay: 0.4 }}
 								className="bg-[#1a1a1a] rounded-lg p-8 flex flex-col"
 							>
+								<h3 className="text-2xl font-bold text-tech-highlight mb-6">
+									效率提升
+								</h3>
 								<div className="space-y-6">
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>✅</span> 提升協作效率
+											<span>⚡️</span> 設計效率
 										</h4>
 										<p className="text-gray-300 leading-relaxed">
-											設計師與工程師有共同語言（按鈕的狀態、尺寸有標準）。
+											• 減少重複設計工作
+											<br />
+											• 快速製作原型
+											<br />• 確保設計決策的一致性
 										</p>
 									</div>
 									<div className="bg-black/30 rounded-lg p-6">
 										<h4 className="text-xl font-bold text-tech-purple mb-4 flex items-center gap-2">
-											<span>✅</span> 易於維護與擴展
+											<span>🚀</span> 開發效率
 										</h4>
 										<p className="text-gray-300 leading-relaxed">
-											想要全站換色、改字體，只需改一處。
+											• 標準化的元件庫
+											<br />
+											• 減少重複開發
+											<br />• 更容易進行維護和更新
 										</p>
 									</div>
 								</div>
 							</motion.div>
 						</div>
 
-						{/* Visual Example */}
+						{/* Bottom Section - Example */}
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.6 }}
 							className="bg-[#1a1a1a] rounded-lg p-8"
 						>
-							<div className="grid grid-cols-4 gap-4">
-								{/* Before Design System */}
-								<div className="col-span-2 bg-black/30 rounded-lg p-6">
-									<h4 className="text-xl font-bold text-red-400 mb-4">
-										沒有 Design System
+							<h3 className="text-2xl font-bold text-tech-highlight mb-6">
+								實際應用示例
+							</h3>
+							<div className="grid grid-cols-2 gap-8">
+								<div className="bg-black/30 rounded-lg p-6">
+									<h4 className="text-xl font-bold text-tech-purple mb-4">
+										元件庫
 									</h4>
 									<div className="space-y-4">
-										<button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-											按鈕 A
-										</button>
-										<button className="bg-indigo-500 text-white px-6 py-3 rounded">
-											按鈕 B
-										</button>
-										<button className="bg-purple-500 text-white px-5 py-2 rounded-xl">
-											按鈕 C
-										</button>
+										<div className="flex items-center gap-4">
+											<button className="bg-tech-highlight text-white px-4 py-2 rounded">
+												主要按鈕
+											</button>
+											<button className="border border-tech-highlight text-tech-highlight px-4 py-2 rounded">
+												次要按鈕
+											</button>
+										</div>
+										<div className="flex items-center gap-4">
+											<div className="w-8 h-8 rounded-full bg-tech-purple"></div>
+											<div className="w-8 h-8 rounded-full bg-tech-highlight"></div>
+											<div className="w-8 h-8 rounded-full bg-tech-grid-bright"></div>
+										</div>
 									</div>
 								</div>
-								{/* After Design System */}
-								<div className="col-span-2 bg-black/30 rounded-lg p-6">
-									<h4 className="text-xl font-bold text-green-400 mb-4">
-										使用 Design System
+								<div className="bg-black/30 rounded-lg p-6">
+									<h4 className="text-xl font-bold text-tech-purple mb-4">
+										設計規範
 									</h4>
-									<div className="space-y-4 space-x-4">
-										<button className="bg-blue-500 text-white px-4 py-2 rounded">
-											按鈕 A
-										</button>
-										<button className="bg-blue-500 text-white px-4 py-2 rounded">
-											按鈕 B
-										</button>
-										<button className="bg-blue-500 text-white px-4 py-2 rounded">
-											按鈕 C
-										</button>
+									<div className="space-y-2 text-gray-300">
+										<p>• 間距系統：4px, 8px, 16px, 24px, 32px</p>
+										<p>• 字體大小：12px, 14px, 16px, 20px, 24px</p>
+										<p>• 圓角：4px, 8px, 12px</p>
 									</div>
 								</div>
 							</div>
