@@ -28,8 +28,8 @@ export default function Slide3() {
 			prevSlide="/lesson2/slide2"
 			nextSlide="/lesson2/slide4"
 			currentSlide="3"
-			totalSlides="29"
-			courseName="NTNU Web Development Course"
+			totalSlides="4"
+			courseName="lesson2"
 		>
 			<div className="relative h-full flex flex-col justify-center">
 				{/* Background Elements */}
