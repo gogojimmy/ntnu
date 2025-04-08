@@ -1,30 +1,69 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, {
+	createContext,
+	useState,
+	useContext,
+	ReactNode,
+	useCallback,
+} from "react";
 
 // Define the shape of the context data
 interface SlidesContextProps {
 	totalSlides: number;
-	// We can add more global slide settings here later if needed
+	slidePaths: string[];
+	getNextSlidePath: (currentPath: string) => string | undefined;
+	getPrevSlidePath: (currentPath: string) => string | undefined;
 }
 
-// Create the context with a default value (or null/undefined if preferred, handling required)
+// Create the context
 const SlidesContext = createContext<SlidesContextProps | undefined>(undefined);
 
 // Define the props for the provider component
 interface SlidesProviderProps {
 	children: ReactNode;
-	// Optionally, allow passing an initial totalSlides count
 	initialTotalSlides?: number;
+	slidePaths?: string[]; // Add slidePaths prop
 }
 
 // Create the provider component
 export const SlidesProvider: React.FC<SlidesProviderProps> = ({
 	children,
-	initialTotalSlides = 31,
+	initialTotalSlides = 0, // Default to 0 if not provided
+	slidePaths = [], // Default to empty array
 }) => {
-	// For now, use a fixed value. Later, this could be calculated dynamically.
-	const [totalSlides] = useState<number>(initialTotalSlides);
+	const [totalSlides] = useState<number>(
+		initialTotalSlides || slidePaths.length
+	); // Use initial or calculated total
 
-	const value = { totalSlides };
+	// Function to find the next slide path
+	const getNextSlidePath = useCallback(
+		(currentPath: string): string | undefined => {
+			const currentIndex = slidePaths.findIndex((path) => path === currentPath);
+			if (currentIndex !== -1 && currentIndex < slidePaths.length - 1) {
+				return slidePaths[currentIndex + 1];
+			}
+			return undefined;
+		},
+		[slidePaths]
+	);
+
+	// Function to find the previous slide path
+	const getPrevSlidePath = useCallback(
+		(currentPath: string): string | undefined => {
+			const currentIndex = slidePaths.findIndex((path) => path === currentPath);
+			if (currentIndex !== -1 && currentIndex > 0) {
+				return slidePaths[currentIndex - 1];
+			}
+			return undefined;
+		},
+		[slidePaths]
+	);
+
+	const value = {
+		totalSlides,
+		slidePaths,
+		getNextSlidePath,
+		getPrevSlidePath,
+	};
 
 	return (
 		<SlidesContext.Provider value={value}>{children}</SlidesContext.Provider>

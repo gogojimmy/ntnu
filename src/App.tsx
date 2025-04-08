@@ -36,6 +36,7 @@ import Lesson2Slide3 from "./slides/lesson2/Slide3";
 import Lesson2Slide4 from "./slides/lesson2/Slide4";
 import Lesson2Slide5 from "./slides/lesson2/Slide5";
 import Lesson2Slide6 from "./slides/lesson2/Slide6";
+import Lesson2Slide7 from "./slides/lesson2/Slide7";
 import { motion } from "motion/react";
 
 const courses = [
@@ -197,48 +198,63 @@ function HomePage() {
 	);
 }
 
+// Define the routes structure
+const routes = [
+	// Lesson 1 Routes
+	{ path: "/lesson1/slide1", element: <Slide1 /> },
+	{ path: "/lesson1/slide2", element: <Slide2 /> },
+	{ path: "/lesson1/slide3", element: <Slide3 /> },
+	{ path: "/lesson1/slide4", element: <Slide4 /> },
+	{ path: "/lesson1/slide5", element: <Slide5 /> },
+	{ path: "/lesson1/slide6", element: <Slide6 /> },
+	{ path: "/lesson1/slide7", element: <Slide7 /> },
+	{ path: "/lesson1/slide8", element: <Slide8 /> },
+	{ path: "/lesson1/slide9", element: <Slide9 /> },
+	{ path: "/lesson1/slide10", element: <Slide10 /> },
+	{ path: "/lesson1/slide11", element: <Slide11 /> },
+	{ path: "/lesson1/slide12", element: <Slide12 /> },
+	{ path: "/lesson1/slide13", element: <Slide13 /> },
+	{ path: "/lesson1/slide14", element: <Slide14 /> },
+	{ path: "/lesson1/slide15", element: <Slide15 /> },
+	{ path: "/lesson1/slide16", element: <Slide16 /> },
+	{ path: "/lesson1/slide17", element: <Slide17 /> },
+	{ path: "/lesson1/slide18", element: <Slide18 /> },
+	{ path: "/lesson1/slide19", element: <Slide19 /> },
+	{ path: "/lesson1/slide20", element: <Slide20 /> },
+	{ path: "/lesson1/slide21", element: <Slide21 /> },
+	{ path: "/lesson1/slide22", element: <Slide22 /> },
+	{ path: "/lesson1/slide23", element: <Slide23 /> },
+	{ path: "/lesson1/slide24", element: <Slide24 /> },
+	{ path: "/lesson1/slide25", element: <Slide25 /> },
+	{ path: "/lesson1/slide26", element: <Slide26 /> },
+	{ path: "/lesson1/slide27", element: <Slide27 /> },
+	{ path: "/lesson1/slide28", element: <Slide28 /> },
+	{ path: "/lesson1/slide29", element: <Slide29 /> },
+	{ path: "/lesson1/slide30", element: <Slide30 /> },
+	{ path: "/lesson1/slide31", element: <Slide31 /> },
+
+	// Lesson 2 Routes
+	{ path: "/lesson2/slide1", element: <Lesson2Slide1 /> },
+	{ path: "/lesson2/slide2", element: <Lesson2Slide2 /> },
+	{ path: "/lesson2/slide3", element: <Lesson2Slide3 /> },
+	{ path: "/lesson2/slide4", element: <Lesson2Slide4 /> },
+	{ path: "/lesson2/slide5", element: <Lesson2Slide5 /> },
+	{ path: "/lesson2/slide6", element: <Lesson2Slide6 /> },
+	{ path: "/lesson2/slide7", element: <Lesson2Slide7 /> },
+];
+
+// Extract slide paths for the context provider
+// Note: Ensure the order here matches the desired navigation order
+export const allSlidePaths = routes.map((route) => route.path);
+
 export default function App() {
 	return (
 		<Router>
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/lesson1/slide1" element={<Slide1 />} />
-				<Route path="/lesson1/slide2" element={<Slide2 />} />
-				<Route path="/lesson1/slide3" element={<Slide3 />} />
-				<Route path="/lesson1/slide4" element={<Slide4 />} />
-				<Route path="/lesson1/slide5" element={<Slide5 />} />
-				<Route path="/lesson1/slide6" element={<Slide6 />} />
-				<Route path="/lesson1/slide7" element={<Slide7 />} />
-				<Route path="/lesson1/slide8" element={<Slide8 />} />
-				<Route path="/lesson1/slide9" element={<Slide9 />} />
-				<Route path="/lesson1/slide10" element={<Slide10 />} />
-				<Route path="/lesson1/slide11" element={<Slide11 />} />
-				<Route path="/lesson1/slide12" element={<Slide12 />} />
-				<Route path="/lesson1/slide13" element={<Slide13 />} />
-				<Route path="/lesson1/slide14" element={<Slide14 />} />
-				<Route path="/lesson1/slide15" element={<Slide15 />} />
-				<Route path="/lesson1/slide16" element={<Slide16 />} />
-				<Route path="/lesson1/slide17" element={<Slide17 />} />
-				<Route path="/lesson1/slide18" element={<Slide18 />} />
-				<Route path="/lesson1/slide19" element={<Slide19 />} />
-				<Route path="/lesson1/slide20" element={<Slide20 />} />
-				<Route path="/lesson1/slide21" element={<Slide21 />} />
-				<Route path="/lesson1/slide22" element={<Slide22 />} />
-				<Route path="/lesson1/slide23" element={<Slide23 />} />
-				<Route path="/lesson1/slide24" element={<Slide24 />} />
-				<Route path="/lesson1/slide25" element={<Slide25 />} />
-				<Route path="/lesson1/slide26" element={<Slide26 />} />
-				<Route path="/lesson1/slide27" element={<Slide27 />} />
-				<Route path="/lesson1/slide28" element={<Slide28 />} />
-				<Route path="/lesson1/slide29" element={<Slide29 />} />
-				<Route path="/lesson1/slide30" element={<Slide30 />} />
-				<Route path="/lesson1/slide31" element={<Slide31 />} />
-				<Route path="/lesson2/slide1" element={<Lesson2Slide1 />} />
-				<Route path="/lesson2/slide2" element={<Lesson2Slide2 />} />
-				<Route path="/lesson2/slide3" element={<Lesson2Slide3 />} />
-				<Route path="/lesson2/slide4" element={<Lesson2Slide4 />} />
-				<Route path="/lesson2/slide5" element={<Lesson2Slide5 />} />
-				<Route path="/lesson2/slide6" element={<Lesson2Slide6 />} />
+				{routes.map((route) => (
+					<Route key={route.path} path={route.path} element={route.element} />
+				))}
 			</Routes>
 		</Router>
 	);
