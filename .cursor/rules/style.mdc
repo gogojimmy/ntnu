@@ -1,0 +1,178 @@
+---
+description: NTNU網頁開發課程投影片的視覺設計風格指南
+globs: ["src/**/*.tsx"]
+alwaysApply: false
+---
+# 投影片設計風格指南
+
+## 色彩系統
+
+投影片使用科技風格的深色主題，主要色彩為：
+
+```js
+// 主色系
+tech: {
+  dark: "#0F0F0F",        // 背景深色
+  darker: "#050505",      // 更深背景色
+  grid: "rgba(0, 255, 163, 0.07)",  // 網格線顏色
+  "grid-bright": "rgba(0, 255, 163, 0.15)",  // 高亮網格線
+  highlight: "#00FFA3",   // 綠色強調色
+  purple: "#BD00FF",      // 紫色輔助色
+  cyan: "#00F0FF",        // 青色輔助色
+  "purple-glow": "rgba(189, 0, 255, 0.2)",  // 紫色光暈效果
+  "green-glow": "rgba(0, 255, 163, 0.2)",   // 綠色光暈效果
+}
+```
+
+## 背景風格
+
+背景使用科技感網格與漸變光暈效果組合：
+
+1. **網格背景** - 使用 `grid-bg` 類別
+   ```css
+   .grid-bg {
+     background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+     background-size: 40px 40px;
+   }
+   ```
+
+2. **漸變光暈** - 使用 `bg-tech-glow` 類別
+   ```css
+   radial-gradient(circle at 0% 0%, var(--tw-colors-tech-purple-glow) 0%, transparent 50%),
+   radial-gradient(circle at 100% 100%, var(--tw-colors-tech-green-glow) 0%, transparent 50%)
+   ```
+
+3. **半透明內容區塊** - 常使用 `bg-black/40 backdrop-blur-sm border border-tech-grid-bright`
+
+## 動畫風格
+
+使用 Motion (React) 實現平滑動畫效果：
+
+1. **標準入場動畫**：
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, y: 20 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 0.6 }}
+   >
+   ```
+
+2. **從左側滑入**：
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, x: -20 }}
+     animate={{ opacity: 1, x: 0 }}
+     transition={{ duration: 0.6, delay: 0.2 }}
+   >
+   ```
+
+3. **從右側滑入**：
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, x: 20 }}
+     animate={{ opacity: 1, x: 0 }}
+     transition={{ duration: 0.6, delay: 0.4 }}
+   >
+   ```
+
+4. **裝飾元素動畫**：
+   ```jsx
+   <motion.div
+     className="absolute -left-4 top-1/4 w-32 h-32 bg-tech-purple/20 blur-[64px] rounded-full"
+     initial={{ opacity: 0, scale: 0.8 }}
+     animate={{ opacity: 1, scale: 1 }}
+     transition={{ duration: 1 }}
+   />
+   ```
+
+## 版面結構
+
+投影片遵循一致的結構模式：
+
+```jsx
+<SlideLayout currentSlide="編號" totalSlidesInLesson={總數} courseName="課程名稱">
+  <div className="relative h-full flex flex-col justify-center">
+    {/* 背景元素 */}
+    <div className="absolute inset-0 rounded-2xl bg-black/40 backdrop-blur-sm border border-tech-grid-bright" />
+
+    {/* 內容區域 */}
+    <div className="relative px-16 py-8/12">
+      <div className="space-y-8">
+        {/* 標題區塊 */}
+        <motion.div>
+          <h1 className="text-4xl font-bold text-white mb-2">主標題</h1>
+          <h2 className="text-2xl text-tech-highlight/80">副標題</h2>
+        </motion.div>
+
+        {/* 內容區塊 - 常用格式 */}
+        <div className="grid grid-cols-2 gap-8">
+          {/* 左側欄 */}
+          <motion.div className="space-y-4">
+            {/* 左側內容 */}
+          </motion.div>
+
+          {/* 右側欄 */}
+          <motion.div className="space-y-4">
+            {/* 右側內容 */}
+          </motion.div>
+        </div>
+      </div>
+    </div>
+
+    {/* 裝飾元素 */}
+    <motion.div className="absolute -left-4 top-1/4 w-32 h-32 bg-tech-purple/20 blur-[64px] rounded-full" />
+    <motion.div className="absolute -right-4 bottom-1/4 w-32 h-32 bg-tech-highlight/20 blur-[64px] rounded-full" />
+  </div>
+</SlideLayout>
+```
+
+## 代碼區塊風格
+
+代碼區塊使用 Prism React Renderer 的 Night Owl 主題：
+
+```jsx
+<CodeBlock 
+  code={codeString} 
+  language="語言" 
+  className="可選額外類別"
+/>
+```
+
+## 內容區塊風格
+
+1. **卡片式區塊**：
+   ```jsx
+   <div className="bg-[#1a1a1a] rounded-lg p-8">
+     <h3 className="text-2xl font-bold text-tech-highlight mb-4">標題</h3>
+     <p className="leading-relaxed text-gray-300">內容</p>
+   </div>
+   ```
+
+2. **列表項目**：
+   ```jsx
+   <div className="flex items-center gap-4 group">
+     <div className="flex items-center justify-center w-8 h-8 rounded border border-tech-highlight/20 bg-tech-highlight/5 text-tech-highlight/60 font-mono text-sm">
+       編號
+     </div>
+     <span className="text-lg text-white/90 group-hover:text-tech-highlight transition-colors">
+       內容
+     </span>
+   </div>
+   ```
+
+3. **範例展示區**：
+   ```jsx
+   <div className="preview-content">
+     {/* 展示內容 */}
+   </div>
+   ```
+
+## 字體與排版
+
+- 標題: `text-4xl font-bold text-white`
+- 副標題: `text-2xl text-tech-highlight/80`
+- 區塊標題: `text-2xl font-bold text-tech-highlight`
+- 小標題: `text-xl font-bold text-tech-purple`
+- 正文: `text-gray-300/text-white/90`
+- 輔助文字: `text-gray-400/text-tech-highlight/60`
