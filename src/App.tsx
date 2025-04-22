@@ -70,6 +70,12 @@ import { Lesson3Slide20 } from "./slides/lesson3/Slide20";
 import { Lesson3Slide21 } from "./slides/lesson3/Slide21";
 import { Lesson3Slide22 } from "./slides/lesson3/Slide22";
 import { Lesson3Slide23 } from "./slides/lesson3/Slide23";
+import { Lesson3Slide24 } from "./slides/lesson3/Slide24";
+import { Lesson3Slide25 } from "./slides/lesson3/Slide25";
+import { Lesson3Slide26 } from "./slides/lesson3/Slide26";
+import { Lesson3Slide27 } from "./slides/lesson3/Slide27";
+import { Lesson3Slide28 } from "./slides/lesson3/Slide28";
+import { Lesson3Slide29 } from "./slides/lesson3/Slide29";
 
 import { motion } from "motion/react";
 import { SlidesProvider } from "./context/SlidesContext";
@@ -121,7 +127,7 @@ const courses = [
 		id: 3,
 		title: "AI概論與工具介紹",
 		description: "了解人工智能基本概念，探索AI工具在開發中的應用",
-		totalSlides: "23",
+		totalSlides: "29",
 		icon: (
 			<svg
 				className="w-6 h-6"
@@ -332,6 +338,12 @@ const routes = [
 	{ path: "/lesson3/slide21", element: Lesson3Slide21 },
 	{ path: "/lesson3/slide22", element: Lesson3Slide22 },
 	{ path: "/lesson3/slide23", element: Lesson3Slide23 },
+	{ path: "/lesson3/slide24", element: Lesson3Slide24 },
+	{ path: "/lesson3/slide25", element: Lesson3Slide25 },
+	{ path: "/lesson3/slide26", element: Lesson3Slide26 },
+	{ path: "/lesson3/slide27", element: Lesson3Slide27 },
+	{ path: "/lesson3/slide28", element: Lesson3Slide28 },
+	{ path: "/lesson3/slide29", element: Lesson3Slide29 },
 ];
 
 // Calculate slide paths and counts per lesson
