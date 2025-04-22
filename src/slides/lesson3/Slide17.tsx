@@ -12,7 +12,7 @@ export function Lesson3Slide17() {
 	// 這顯示了生成式技術的發展是逐步演進的。
 
 	return (
-		<SlideLayout slide={17}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-center p-8"
 				initial={{ opacity: 0 }}

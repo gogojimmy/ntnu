@@ -97,7 +97,7 @@ const expertPrompt = `
 
 export function Lesson3Slide32() {
 	return (
-		<SlideLayout slide={32}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-stretch justify-start overflow-hidden p-4 text-white md:p-8"
 				initial={{ opacity: 0 }}

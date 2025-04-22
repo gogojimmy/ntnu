@@ -74,7 +74,7 @@ export function Lesson3Slide31() {
 	// 這就是 Prompt Engineering 的威力：透過精心設計的輸入，引導 AI 發揮最大的潛力。
 
 	return (
-		<SlideLayout slide={31}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-stretch justify-start overflow-hidden p-4 text-white md:p-8"
 				initial={{ opacity: 0 }}

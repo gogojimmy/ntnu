@@ -39,7 +39,7 @@ export function Lesson3Slide23() {
 	// 這不是在調整模型，而是在調整你和模型的溝通方式。
 
 	return (
-		<SlideLayout slide={23}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-center p-8 text-white"
 				initial={{ opacity: 0 }}

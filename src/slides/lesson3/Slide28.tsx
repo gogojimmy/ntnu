@@ -16,7 +16,7 @@ export function Lesson3Slide28() {
 	// https://arxiv.org/abs/2310.05657
 
 	return (
-		<SlideLayout slide={28}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-start p-8 text-white"
 				initial={{ opacity: 0 }}

@@ -145,7 +145,7 @@ export function Lesson3Slide30() {
 	// 不用死記，重點是理解它們背後的思考邏輯：如何把任務拆解清楚，提供足夠的資訊給 AI。
 
 	return (
-		<SlideLayout slide={30}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-start overflow-y-auto p-8 text-white"
 				initial={{ opacity: 0 }}

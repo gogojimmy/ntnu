@@ -11,7 +11,7 @@ export function Lesson3Slide19() {
 	// 關鍵在於「問對問題」，也就是下達清晰、具體的指令。
 
 	return (
-		<SlideLayout slide={19}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-center p-8 text-white"
 				initial={{ opacity: 0 }}

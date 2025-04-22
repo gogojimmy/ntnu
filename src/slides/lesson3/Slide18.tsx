@@ -15,7 +15,7 @@ export function Lesson3Slide18() {
 	const textExample = "這堂課我們要講如何駕馭大型語言模型 ......";
 
 	return (
-		<SlideLayout slide={18}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full flex-col items-center justify-center p-8 text-white"
 				initial={{ opacity: 0 }}

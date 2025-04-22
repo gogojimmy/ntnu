@@ -49,7 +49,7 @@ export function Lesson3Slide22() {
 	// 調整人（使用者）的輸入，比調整函式（模型）本身更實際、更有效。
 
 	return (
-		<SlideLayout slide={22}>
+		<SlideLayout>
 			<motion.div
 				className="flex h-full w-full flex-col items-center justify-center p-8 text-white"
 				initial={{ opacity: 0 }}
