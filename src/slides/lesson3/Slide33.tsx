@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import SlideLayout from "../../layouts/SlideLayout";
 import { Title } from "../../components/Title";
-import React from "react";
 
 export function Lesson3Slide33() {
 	// Speaker Notes:
